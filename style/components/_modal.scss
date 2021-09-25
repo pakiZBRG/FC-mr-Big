@@ -1,0 +1,48 @@
+.open {
+    display: none;
+    & .modal {
+        position: fixed;
+        border-radius: 1rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 45rem;
+        background: rgba(17, 17, 17, .8);
+        backdrop-filter: blur(13px) brightness(90%);
+        padding: 3rem;
+        color: #111;
+        z-index: 10;
+        transition: 2s ease-out;
+        @include formControl;
+
+        @include btn;
+
+        & h2 {
+            color: whitesmoke;
+            text-align: center;
+        }
+
+        .close {
+            color: #444;
+            background: transparent;
+            border: none;
+            position: absolute;
+            top: 0px;
+            right: 10px;
+            font-size: 3rem;
+            cursor: pointer;
+        }
+    }
+    
+    & .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(17, 17, 17, .6);
+        z-index: 9;
+        backdrop-filter: blur(5px);
+        transition: 2s ease-out;
+    }
+}

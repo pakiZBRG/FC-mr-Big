@@ -1,0 +1,1456 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&family=Roboto&gamily=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Work Sans';
+  background: #111;
+  overflow-x: hidden;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.navigation {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  padding: 1rem 0;
+}
+
+.navigation_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navigation_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2rem;
+  -ms-flex-preferred-size: 15rem;
+      flex-basis: 15rem;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigation_img img {
+  height: 4rem;
+}
+
+.navigation_img h2 {
+  text-transform: uppercase;
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: whitesmoke;
+  font-family: 'Roboto';
+}
+
+.navigation_links {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.navigation_links li {
+  margin-left: 3rem;
+  -webkit-transition: ease 0.35s all;
+  transition: ease 0.35s all;
+  font-size: 1.3rem;
+}
+
+.navigation_links li a {
+  color: whitesmoke;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+}
+
+.navigation_links li a span {
+  display: block;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.navigation_links li a::after {
+  content: attr(data-link-alt);
+  color: crimson;
+  display: inline;
+  position: absolute;
+  -webkit-transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.navigation_links li a:hover span {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.navigation_links li a:hover::after {
+  top: 0;
+}
+
+.menu {
+  overflow: hidden;
+  cursor: -webkit-grab;
+  cursor: grab;
+  width: 100vw;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+}
+
+.menu.is-dragging {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+.menu--wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.menu--item {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu--item img {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.menu--content {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  z-index: 10;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: crimson;
+  font-family: 'Roboto';
+}
+
+.menu--content h2 {
+  font-size: 9.5vw;
+  line-height: 11vw;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.menu--content h2 span {
+  font-size: 16vw;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: crimson;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu--content p {
+  font-weight: bolder;
+  text-transform: uppercase;
+  word-spacing: 0.5rem;
+  letter-spacing: 4px;
+  font-size: 1.1rem;
+}
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: whitesmoke;
+}
+
+.pagination li a {
+  text-decoration: none;
+  margin: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 50%;
+  color: whitesmoke;
+  background: #111;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+
+.pagination li a:hover {
+  background: whitesmoke;
+  color: #111;
+}
+
+.pagination .currentpage a {
+  background: crimson;
+}
+
+.pagination .currentpage a:hover {
+  color: crimson;
+}
+
+.pagination .prev a,
+.pagination .next a {
+  background: #333;
+  border-radius: 0.5rem;
+}
+
+.pagination .dots {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  font-size: 1.3rem;
+}
+
+.container {
+  width: 75%;
+  margin: 2rem auto;
+}
+
+.container .intro {
+  margin: 10rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .intro img {
+  position: relative;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 2rem;
+  width: 50%;
+  -webkit-box-shadow: -10px -10px 0 0 #222, -20px -20px 0 0 crimson;
+          box-shadow: -10px -10px 0 0 #222, -20px -20px 0 0 crimson;
+  -webkit-transition: 400ms ease-out;
+  transition: 400ms ease-out;
+}
+
+.container .intro img:hover {
+  -webkit-box-shadow: -0px -0px 0px 0px crimson;
+          box-shadow: -0px -0px 0px 0px crimson;
+}
+
+.container .intro .intro-content {
+  margin: 0 2rem;
+  width: 50%;
+  color: whitesmoke;
+  font-family: "Work Sans";
+}
+
+.container .intro .intro-content__head {
+  position: relative;
+  color: crimson;
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-left: 7rem;
+}
+
+.container .intro .intro-content__head::after {
+  display: block;
+  position: absolute;
+  content: '';
+  top: 1.2rem;
+  left: -7rem;
+  height: 1px;
+  width: 5rem;
+  background: crimson;
+}
+
+.container .intro .intro-content__subhead {
+  margin: 2rem 0;
+  font-size: 2rem;
+}
+
+section .icons {
+  width: 80%;
+  margin: 0 auto;
+  padding: 4rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section .icons-head {
+  color: crimson;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2rem;
+}
+
+section .icons-figure {
+  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section .icons-figure .card {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 1rem;
+  padding: 1.5rem;
+  width: 16rem;
+  text-align: center;
+  border-radius: 1rem;
+  -webkit-transition: background .3s, -webkit-transform .3s;
+  transition: background .3s, -webkit-transform .3s;
+  transition: background .3s, transform .3s;
+  transition: background .3s, transform .3s, -webkit-transform .3s;
+}
+
+section .icons-figure .card:hover {
+  -webkit-transform: translateY(-0.8rem);
+          transform: translateY(-0.8rem);
+  background: whitesmoke;
+  -webkit-box-shadow: 0 0 10px #000;
+          box-shadow: 0 0 10px #000;
+}
+
+section .icons-figure .card:hover figure {
+  background: crimson;
+  -webkit-box-shadow: 0 0 5px #333;
+          box-shadow: 0 0 5px #333;
+}
+
+section .icons-figure .card:hover h2 {
+  color: #111;
+}
+
+section .icons-figure .card:hover p {
+  color: #333;
+}
+
+section .icons-figure .card figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  background: whitesmoke;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+}
+
+section .icons-figure .card figure img {
+  height: 3rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+section .icons-figure .card h2 {
+  color: whitesmoke;
+  margin: 1rem 0;
+}
+
+section .icons-figure .card p {
+  color: gray;
+}
+
+.gallery-head {
+  text-transform: uppercase;
+  color: crimson;
+  text-align: center;
+  margin: 4rem 0;
+  font-size: 2rem;
+}
+
+.trainers {
+  width: 75%;
+  margin: 2rem auto;
+  color: whitesmoke;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 2rem 0;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.flex-card {
+  margin: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex-card img {
+  height: 12rem;
+  width: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.flex-card p {
+  font-size: 1.5rem;
+}
+
+.flex-card__social a i {
+  color: crimson;
+  margin: 0.6rem;
+  text-decoration: none;
+}
+
+.hero-img {
+  height: 50vh;
+  position: relative;
+  width: 100vw;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.hero-img img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.5;
+  border-bottom-left-radius: 10rem;
+  border-bottom-right-radius: 10rem;
+}
+
+.hero-img h1 {
+  font-family: 'Roboto';
+  text-transform: uppercase;
+  font-size: 6rem;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: whitesmoke;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  bottom: 7%;
+  left: 7%;
+}
+
+.contact {
+  width: 80%;
+  margin: 6rem auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.contact aside {
+  width: 45%;
+  height: 30rem;
+  margin: 1rem;
+}
+
+.contact .contact-form {
+  width: 45%;
+  margin: 1rem auto;
+}
+
+.contact .contact-form .form_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  font-family: 'Open Sans';
+}
+
+.contact .contact-form .form_control label {
+  color: gray;
+  margin: 0.5rem 0;
+}
+
+.contact .contact-form .form_control input, .contact .contact-form .form_control textarea {
+  width: 100%;
+  background: #2f2f2f;
+  border: none;
+  padding: 0.6rem;
+  color: whitesmoke;
+  border: 1px solid #2f2f2f;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.contact .contact-form .form_control input::-webkit-input-placeholder, .contact .contact-form .form_control textarea::-webkit-input-placeholder {
+  color: gray;
+}
+
+.contact .contact-form .form_control input:-ms-input-placeholder, .contact .contact-form .form_control textarea:-ms-input-placeholder {
+  color: gray;
+}
+
+.contact .contact-form .form_control input::-ms-input-placeholder, .contact .contact-form .form_control textarea::-ms-input-placeholder {
+  color: gray;
+}
+
+.contact .contact-form .form_control input::placeholder, .contact .contact-form .form_control textarea::placeholder {
+  color: gray;
+}
+
+.contact .contact-form .form_control input:focus, .contact .contact-form .form_control textarea:focus {
+  border-bottom-color: crimson;
+}
+
+.contact .contact-form .form_control input[type=date] {
+  font-family: "Arial";
+}
+
+.contact .contact-form .form_control i {
+  bottom: 22px;
+  right: 10px;
+  position: absolute;
+  color: gray;
+}
+
+.contact .contact-form .form_control textarea {
+  resize: none;
+  font-family: 'Work Sans';
+}
+
+.contact .contact-form .login_btn {
+  background: transparent;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  width: 50%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Work Sans';
+  margin-top: 1rem;
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.contact .contact-form .login_btn:hover {
+  background: whitesmoke;
+  color: #222;
+}
+
+.login-form {
+  width: 30rem;
+  margin: 1rem auto;
+}
+
+.login-form .form_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  font-family: 'Open Sans';
+}
+
+.login-form .form_control label {
+  color: gray;
+  margin: 0.5rem 0;
+}
+
+.login-form .form_control input, .login-form .form_control textarea {
+  width: 100%;
+  background: #2f2f2f;
+  border: none;
+  padding: 0.6rem;
+  color: whitesmoke;
+  border: 1px solid #2f2f2f;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.login-form .form_control input::-webkit-input-placeholder, .login-form .form_control textarea::-webkit-input-placeholder {
+  color: gray;
+}
+
+.login-form .form_control input:-ms-input-placeholder, .login-form .form_control textarea:-ms-input-placeholder {
+  color: gray;
+}
+
+.login-form .form_control input::-ms-input-placeholder, .login-form .form_control textarea::-ms-input-placeholder {
+  color: gray;
+}
+
+.login-form .form_control input::placeholder, .login-form .form_control textarea::placeholder {
+  color: gray;
+}
+
+.login-form .form_control input:focus, .login-form .form_control textarea:focus {
+  border-bottom-color: crimson;
+}
+
+.login-form .form_control input[type=date] {
+  font-family: "Arial";
+}
+
+.login-form .form_control i {
+  bottom: 22px;
+  right: 10px;
+  position: absolute;
+  color: gray;
+}
+
+.login-form .form_control textarea {
+  resize: none;
+  font-family: 'Work Sans';
+}
+
+.login-form .btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Work Sans';
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.login-form .btn:hover {
+  background: whitesmoke;
+  color: #222;
+}
+
+.center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.center .error {
+  background: transparent;
+  border: 1px solid #444;
+  color: #666;
+  padding: 0.7rem 2rem;
+  text-align: center;
+  width: 25rem;
+}
+
+.admin {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.admin-nav {
+  width: 16rem;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-nav__width {
+  height: 95%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.admin-nav__width ul {
+  list-style-type: none;
+}
+
+.admin-nav__width ul a {
+  text-decoration: none;
+}
+
+.admin-nav__width ul a li {
+  color: #777;
+  text-transform: uppercase;
+  padding: 1rem;
+  -webkit-transition: background 400ms, color 200ms;
+  transition: background 400ms, color 200ms;
+}
+
+.admin-nav__width ul a li:hover {
+  background: rgba(220, 20, 60, 0.2);
+  border-right: 4px solid crimson;
+  color: whitesmoke;
+}
+
+.admin-nav__width ul a li i {
+  font-size: 0.9rem;
+  margin-right: 0.4rem;
+}
+
+.admin-nav__width ul #main {
+  color: #444;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.admin-nav img {
+  height: 5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.admin-add {
+  background: #222;
+  width: 100%;
+  padding: 2rem;
+}
+
+.admin-add h1 {
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.admin-add__form {
+  width: 30rem;
+}
+
+.admin-add__form .form_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  font-family: 'Open Sans';
+}
+
+.admin-add__form .form_control label {
+  color: gray;
+  margin: 0.5rem 0;
+}
+
+.admin-add__form .form_control input, .admin-add__form .form_control textarea {
+  width: 100%;
+  background: #2f2f2f;
+  border: none;
+  padding: 0.6rem;
+  color: whitesmoke;
+  border: 1px solid #2f2f2f;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.admin-add__form .form_control input::-webkit-input-placeholder, .admin-add__form .form_control textarea::-webkit-input-placeholder {
+  color: gray;
+}
+
+.admin-add__form .form_control input:-ms-input-placeholder, .admin-add__form .form_control textarea:-ms-input-placeholder {
+  color: gray;
+}
+
+.admin-add__form .form_control input::-ms-input-placeholder, .admin-add__form .form_control textarea::-ms-input-placeholder {
+  color: gray;
+}
+
+.admin-add__form .form_control input::placeholder, .admin-add__form .form_control textarea::placeholder {
+  color: gray;
+}
+
+.admin-add__form .form_control input:focus, .admin-add__form .form_control textarea:focus {
+  border-bottom-color: crimson;
+}
+
+.admin-add__form .form_control input[type=date] {
+  font-family: "Arial";
+}
+
+.admin-add__form .form_control i {
+  bottom: 22px;
+  right: 10px;
+  position: absolute;
+  color: gray;
+}
+
+.admin-add__form .form_control textarea {
+  resize: none;
+  font-family: 'Work Sans';
+}
+
+.admin-add__form .btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Work Sans';
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.admin-add__form .btn:hover {
+  background: whitesmoke;
+  color: #222;
+}
+
+.admin-section {
+  background: #222;
+  width: 100%;
+  padding: 2rem;
+}
+
+.admin-section .search {
+  margin: 1rem;
+  position: relative;
+}
+
+.admin-section .search input {
+  background: #111;
+  border: none;
+  padding: 0.5rem;
+  text-indent: 0.2rem;
+  border-radius: 0.2rem;
+  color: whitesmoke;
+  font-size: 1rem;
+  width: 20rem;
+}
+
+.admin-section .search input::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+.admin-section .search input:-ms-input-placeholder {
+  color: #aaa;
+}
+
+.admin-section .search input::-ms-input-placeholder {
+  color: #aaa;
+}
+
+.admin-section .search input::placeholder {
+  color: #aaa;
+}
+
+.admin-section .search i {
+  position: absolute;
+  top: 9px;
+  left: 295px;
+  color: #777;
+}
+
+.admin-section h1 {
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.admin-members {
+  height: 70vh;
+  overflow-y: visible;
+  overflow-x: hidden;
+}
+
+.admin-members__single {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #111;
+  -webkit-box-shadow: 2px 2px 8px #000;
+          box-shadow: 2px 2px 8px #000;
+  color: whitesmoke;
+  border-radius: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 1rem;
+  padding: 0.8rem 1.5rem;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.admin-members__single:hover {
+  border-color: #333;
+  background: #333;
+  color: whitesmoke;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.admin-members__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: whitesmoke;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 2px 2px 8px #000;
+          box-shadow: 2px 2px 8px #000;
+  color: #222;
+  border-radius: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  margin: 1rem;
+  padding: 1rem 1.5rem;
+  -webkit-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+}
+
+.progress-bar {
+  width: 22.5%;
+  -webkit-box-shadow: inset 0 0 10px #000;
+          box-shadow: inset 0 0 10px #000;
+  -webkit-box-shadow: 0 0 6px #000;
+          box-shadow: 0 0 6px #000;
+  height: 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.progress-bar__fill {
+  height: inherit;
+  border-radius: 1rem;
+  background: crimson;
+}
+
+.extend {
+  width: 22.5%;
+  background: whitesmoke;
+  padding: 0.3rem 0;
+  border-radius: 1rem;
+  text-align: center;
+  color: #111;
+  border: 1px solid whitesmoke;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+}
+
+.extend span {
+  display: block;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.extend::after {
+  content: attr(data-link-alt);
+  color: #111;
+  display: inline;
+  position: absolute;
+  -webkit-transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.extend:hover span {
+  -webkit-transform: translateY(110%);
+          transform: translateY(110%);
+}
+
+.extend:hover::after {
+  top: 20%;
+}
+
+.isDone {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 15%;
+  text-align: center;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  width: 7rem;
+  margin: 0 auto;
+  padding: 0.2rem;
+}
+
+.expired {
+  color: crimson;
+  background: rgba(220, 20, 60, 0.2);
+}
+
+.lasts {
+  color: SeaGreen;
+  background: rgba(46, 139, 86, 0.2);
+}
+
+.action {
+  width: 12.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.action a, .action button {
+  padding: 0.5rem;
+  width: 2rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0 0.3rem;
+  -webkit-transition: background 300ms, color 200ms;
+  transition: background 300ms, color 200ms;
+}
+
+.action .delete {
+  color: crimson;
+  background: #333;
+}
+
+.action .delete:hover {
+  background: crimson;
+  color: whitesmoke;
+}
+
+.action .edit {
+  color: DodgerBlue;
+  background: #333;
+  border: none;
+}
+
+.action .edit:hover {
+  background: DodgerBlue;
+  color: whitesmoke;
+}
+
+.active {
+  border-right: 4px solid crimson;
+  color: crimson !important;
+}
+
+.open {
+  display: none;
+}
+
+.open .modal {
+  position: fixed;
+  border-radius: 1rem;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 45rem;
+  background: rgba(17, 17, 17, 0.8);
+  -webkit-backdrop-filter: blur(13px) brightness(90%);
+          backdrop-filter: blur(13px) brightness(90%);
+  padding: 3rem;
+  color: #111;
+  z-index: 10;
+  -webkit-transition: 2s ease-out;
+  transition: 2s ease-out;
+}
+
+.open .modal .form_control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  font-family: 'Open Sans';
+}
+
+.open .modal .form_control label {
+  color: gray;
+  margin: 0.5rem 0;
+}
+
+.open .modal .form_control input, .open .modal .form_control textarea {
+  width: 100%;
+  background: #2f2f2f;
+  border: none;
+  padding: 0.6rem;
+  color: whitesmoke;
+  border: 1px solid #2f2f2f;
+  font-size: 0.9rem;
+  margin-bottom: 0.7rem;
+}
+
+.open .modal .form_control input::-webkit-input-placeholder, .open .modal .form_control textarea::-webkit-input-placeholder {
+  color: gray;
+}
+
+.open .modal .form_control input:-ms-input-placeholder, .open .modal .form_control textarea:-ms-input-placeholder {
+  color: gray;
+}
+
+.open .modal .form_control input::-ms-input-placeholder, .open .modal .form_control textarea::-ms-input-placeholder {
+  color: gray;
+}
+
+.open .modal .form_control input::placeholder, .open .modal .form_control textarea::placeholder {
+  color: gray;
+}
+
+.open .modal .form_control input:focus, .open .modal .form_control textarea:focus {
+  border-bottom-color: crimson;
+}
+
+.open .modal .form_control input[type=date] {
+  font-family: "Arial";
+}
+
+.open .modal .form_control i {
+  bottom: 22px;
+  right: 10px;
+  position: absolute;
+  color: gray;
+}
+
+.open .modal .form_control textarea {
+  resize: none;
+  font-family: 'Work Sans';
+}
+
+.open .modal .btn {
+  margin-top: 1rem;
+  background: transparent;
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: 'Work Sans';
+  -webkit-transition: 300ms ease-out;
+  transition: 300ms ease-out;
+}
+
+.open .modal .btn:hover {
+  background: whitesmoke;
+  color: #222;
+}
+
+.open .modal h2 {
+  color: whitesmoke;
+  text-align: center;
+}
+
+.open .modal .close {
+  color: #444;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.open .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.6);
+  z-index: 9;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-transition: 2s ease-out;
+  transition: 2s ease-out;
+}
+
+footer {
+  margin-top: 8rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: #000;
+  color: gray;
+}
+
+footer .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 3rem 0;
+}
+
+footer .footer-work {
+  width: 15rem;
+}
+
+footer .footer-work p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+footer .footer-work p span {
+  color: #555;
+}
+
+footer .footer-contact p a {
+  color: gray;
+  text-decoration: none;
+}
+
+footer .footer-social a {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-left: 1rem;
+  position: relative;
+}
+
+footer .footer-social a::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: whitesmoke;
+  -webkit-transition: 300ms bottom;
+  transition: 300ms bottom;
+}
+
+footer .footer-social a:hover::before {
+  bottom: 45%;
+}
+
+footer .reference {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 2rem 0;
+}
+
+footer .reference p a {
+  color: whitesmoke;
+  text-decoration: none;
+  position: relative;
+}
+
+footer .reference p a::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background: whitesmoke;
+  -webkit-transition: 300ms bottom;
+  transition: 300ms bottom;
+}
+
+footer .reference p a:hover::before {
+  bottom: 45%;
+}
+
+#line {
+  width: 90%;
+  margin: 0 auto;
+  height: 1px;
+  background: #222;
+}
+
+.not-found {
+  height: calc(100vh - 505px);
+  font-family: "Work Sans";
+}
+
+.not-found__center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: whitesmoke;
+  margin-top: 4rem;
+}
+
+.not-found__center p {
+  margin: 1rem 0;
+  font-size: 1.15rem;
+}
+
+.not-found__center p span {
+  color: crimson;
+}
+
+.not-found__center a {
+  font-size: 1.3rem;
+  color: crimson;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+}
+
+.not-found__center a span {
+  display: block;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.not-found__center a::after {
+  content: attr(data-link-alt);
+  color: whitesmoke;
+  display: inline;
+  position: absolute;
+  -webkit-transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.not-found__center a:hover span {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.not-found__center a:hover::after {
+  top: 0;
+}
+/*# sourceMappingURL=style.css.map */

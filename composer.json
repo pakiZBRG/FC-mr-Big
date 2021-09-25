@@ -1,0 +1,19 @@
+{
+    "name": "pavlovic/mrbig",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Pavlovic\\Mrbig\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pakiZBRG",
+            "email": "pavlovicnikola511@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.5"
+    }
+}

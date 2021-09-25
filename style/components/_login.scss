@@ -1,0 +1,22 @@
+.login-form{
+    width: 30rem;
+    margin: 1rem auto;
+
+    @include formControl;
+    
+    @include btn;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+
+    & .error {
+        background: transparent;
+        border: 1px solid #444;
+        color: #666;
+        padding: 0.7rem 2rem;
+        text-align: center;
+        width: 25rem;
+    }
+}

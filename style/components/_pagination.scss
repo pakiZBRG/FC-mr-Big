@@ -1,0 +1,40 @@
+.pagination {
+    display: flex;
+    list-style: none;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 3.5rem;
+    justify-content: center;
+    color: whitesmoke;
+    & li a {
+        text-decoration: none;
+        margin: 0.5rem;
+        padding: 0.5rem 0.8rem;
+        border-radius: 50%;
+        color: whitesmoke;
+        background: #111;
+        transition: 200ms ease-in;
+        &:hover {
+            background: whitesmoke;
+            color: #111;
+        }
+    }
+
+    & .currentpage a {
+        background: crimson;
+        &:hover {
+            color: crimson;
+        }
+    }
+
+    & .prev a,
+    & .next a {
+        background: #333;
+        border-radius: 0.5rem;
+    }
+
+    & .dots {
+        user-select: none;
+        font-size: 1.3rem;
+    }
+}

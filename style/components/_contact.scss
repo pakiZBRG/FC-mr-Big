@@ -1,0 +1,63 @@
+.hero-img {
+    height: 50vh;
+    position: relative;
+    width: 100vw;
+    user-select: none;
+
+    & img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+        border-bottom-left-radius: 10rem;
+        border-bottom-right-radius: 10rem;
+    }
+
+    & h1 {
+        font-family: 'Roboto';
+        text-transform: uppercase;
+        font-size: 6rem;
+        -webkit-text-stroke-width: 1.5px;
+        -webkit-text-stroke-color: whitesmoke;
+        -webkit-text-fill-color: transparent;
+        position: absolute;
+        bottom: 7%;
+        left: 7%;
+    }
+}
+
+.contact {
+    width: 80%;
+    margin: 6rem auto;
+    display: flex;
+
+    & aside{
+        width: 45%;
+        height: 30rem;
+        margin: 1rem;
+    }
+
+    & .contact-form{
+        width: 45%;
+        margin: 1rem auto;
+
+        @include formControl;
+        
+        & .login_btn {
+            background: transparent;
+            border: 2px solid whitesmoke;
+            color: whitesmoke;
+            width: 50%;
+            padding: 0.6rem;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Work Sans';
+            margin-top: 1rem;
+            transition: 300ms ease-out;
+            &:hover{
+                background: whitesmoke;
+                color: #222;
+            }
+        }
+    }
+}

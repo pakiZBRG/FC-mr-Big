@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&family=Roboto&gamily=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans';
+    background: #111;
+    overflow-x: hidden;
+}
+
+input:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+@mixin formControl {
+    & .form_control {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        font-family: 'Open Sans';
+
+        & label {
+            color: gray;
+            margin: 0.5rem 0;
+        }
+
+        & input, & textarea {
+            width: 100%;
+            background: #2f2f2f;
+            border: none;
+            padding: 0.6rem;
+            color: whitesmoke;
+            border: 1px solid #2f2f2f;
+            font-size: 0.9rem;
+            margin-bottom: 0.7rem;
+            &::placeholder{
+                color: gray;
+            }
+            &:focus {
+                border-bottom-color: crimson;
+            }
+        }
+
+        & input[type=date]{
+            font-family: "Arial";
+        }
+        & i {
+            bottom: 22px;
+            right: 10px;
+            position: absolute;
+            color: gray;
+        }
+        & textarea {
+            resize: none;
+            font-family: 'Work Sans';
+        }
+    }
+}
+
+@mixin btn {
+    & .btn {
+        margin-top: 1rem;
+        background: transparent;
+        border: 2px solid whitesmoke;
+        color: whitesmoke;
+        width: 50%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        font-family: 'Work Sans';
+        transition: 300ms ease-out;
+        &:hover{
+            background: whitesmoke;
+            color: #222;
+        }
+    }
+}
+
+@import "./components/nav";
+@import "./components/carousel";
+@import "./components/pagination";
+@import "./components/index";
+@import "./components/contact";
+@import "./components/login";
+@import "./components/admin";
+@import "./components/modal";
+@import "./components/footer";
+@import "./components/404";

@@ -1,0 +1,166 @@
+.container{
+    width: 75%;
+    margin: 2rem auto;
+
+    & .intro{
+        margin: 10rem 0;
+        display: flex;
+
+        & img {
+            position: relative;
+            object-fit: cover;
+            margin: 0 2rem;
+            width: 50%;
+            box-shadow: -10px -10px 0 0 #222, -20px -20px 0 0 crimson;
+            transition: 400ms ease-out;
+
+            &:hover {
+                box-shadow: -0px -0px 0px 0px crimson;
+            }
+        }
+
+        & .intro-content {
+            margin: 0 2rem;
+            width: 50%;
+            color: whitesmoke;
+            font-family: "Work Sans";
+
+            &__head{
+                position: relative;
+                color: crimson;
+                text-transform: uppercase;
+                font-size: 2rem;
+                margin-left: 7rem;
+
+                &::after{
+                    display: block;
+                    position: absolute;
+                    content: '';
+                    top: 1.2rem;
+                    left: -7rem;
+                    height: 1px;
+                    width: 5rem;
+                    background: crimson;
+                }
+            }
+
+            &__subhead{
+                margin: 2rem 0;
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+section .icons {
+    width: 80%;
+    margin: 0 auto;
+    padding: 4rem 0;
+    display: flex;
+    flex-direction: column;
+
+    &-head {
+        color: crimson;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2rem;
+    }
+
+    &-figure{
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        & .card {
+            user-select: none;
+            margin: 1rem;
+            padding: 1.5rem;
+            width: 16rem;
+            text-align: center;
+            border-radius: 1rem;
+            transition: background .3s, transform .3s;
+            &:hover {
+                transform: translateY(-0.8rem);
+                background: whitesmoke;
+                box-shadow: 0 0 10px #000;
+                & figure { background: crimson;
+                    box-shadow: 0 0 5px #333; }
+                & h2 { color: #111; }
+                & p { color: #333; }
+            }
+
+            & figure{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin: 0 auto;
+                background: whitesmoke;
+                height: 5rem;
+                width: 5rem;
+                border-radius: 50%;
+                & img {
+                    height: 3rem;
+                    object-fit: contain;
+                }
+            }
+
+            & h2{
+                color: whitesmoke;
+                margin: 1rem 0;
+            }
+
+            & p {
+                color: gray;
+            }
+        }
+    }
+}
+
+.gallery-head {
+    text-transform: uppercase;
+    color: crimson;
+    text-align: center;
+    margin: 4rem 0;
+    font-size: 2rem;
+}
+
+.trainers {
+    width: 75%;
+    margin: 2rem auto;
+    color: whitesmoke;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    justify-content: space-evenly;
+
+    &-card {
+        margin: 2rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+        & img {
+            height: 12rem;
+            width: 12rem;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            margin-bottom: 1.5rem;
+        }
+
+        & p {
+            font-size: 1.5rem;
+        }
+
+        &__social a i {
+            color: crimson;
+            margin: 0.6rem;
+            text-decoration: none;
+        }
+    }
+}
