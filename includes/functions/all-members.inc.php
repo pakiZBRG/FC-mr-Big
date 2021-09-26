@@ -16,15 +16,26 @@
     $year = date('Y');
     $extend = $year . '-' . $month . '-' . $day;
 
+    // search
+    $search = isset($_GET['input']) ? $_GET['input'] : '';
+
     // pagination
     $page = isset($_GET['pageNum']) && is_numeric($_GET['pageNum']) ? $_GET['pageNum'] : 1;
-    $num_results_on_page = 20;
+    $num_results_on_page = 7;
     $total_pages = $conn->query('SELECT * FROM members')->num_rows;
     $calc_page = ($page - 1) * $num_results_on_page;
 
-    $sql = "SELECT * FROM members LIMIT ?, ?";
-    $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "ii", $calc_page, $num_results_on_page);
+    if($search) {
+        $search = "%$search%";
+        $sql = "SELECT * FROM members WHERE name LIKE ? OR id LIKE ? OR surname LIKE ? LIMIT ?, ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "sssii", $search, $search, $search, $calc_page, $num_results_on_page);
+    } else {
+        $sql = "SELECT * FROM members LIMIT ?, ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "ii", $calc_page, $num_results_on_page);
+    }
+
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while($row = mysqli_fetch_assoc($result)){
