@@ -78,7 +78,7 @@
         // Status progresa
         if ($today < 0){
             $progressElement = "
-                <a href='./includes/functions/extend-member.inc.php?id=$id' class='extend' data-link-alt='do $extendFormat'>
+                <a onclick='extendMembership($id)' class='extend' data-link-alt='do $extendFormat'>
                     <span>Produzi</span>
                 </a>
             ";
@@ -100,9 +100,9 @@
                 $progressElement
                 $element
                 <div class='action'>
-                    <a class='delete' href='admin.php?page=clanovi&delete=$id'>
+                    <span class='delete' onclick='deleteMember($id)'>
                         <i class='fa fa-trash'></i>
-                    </a>
+                    </span>
                     <button class='edit' onclick='openUpdateModal(this)'>
                         <i class='fa fa-edit'></i>
                         <input type='hidden' name='id' value='$id'/>
