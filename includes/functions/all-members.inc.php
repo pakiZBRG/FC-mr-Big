@@ -28,6 +28,15 @@
     if($search) {
         $search = "%$search%";
         $sql = "SELECT * FROM members WHERE name LIKE ? OR id LIKE ? OR surname LIKE ? LIMIT ?, ?";
+
+        $total_sql = "SELECT COUNT(*) as results FROM members WHERE name LIKE ? OR id LIKE ? OR surname LIKE ?";
+        $total_stmt = mysqli_prepare($conn, $total_sql);
+        mysqli_stmt_bind_param($total_stmt, "sss", $search, $search, $search);
+        mysqli_stmt_execute($total_stmt);
+        $total_result = mysqli_stmt_get_result($total_stmt);
+        $total_row = mysqli_fetch_assoc($total_result);
+        $total_pages = $total_row['results'];
+
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "sssii", $search, $search, $search, $calc_page, $num_results_on_page);
     } else {
@@ -35,7 +44,6 @@
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "ii", $calc_page, $num_results_on_page);
     }
-
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     while($row = mysqli_fetch_assoc($result)){
