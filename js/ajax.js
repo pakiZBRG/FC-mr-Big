@@ -1,13 +1,11 @@
 function openUpdateModal(e) {
     var memberId = e.lastElementChild.value;
-    var action = 'fetch_memberId';
 
     // Modal AJAX
     $.ajax({
         url: '/mrbig/includes/modal.php',
         method: "GET",
         data: {
-            action,
             memberId
         },
         success: data => {
@@ -32,46 +30,21 @@ function closeModal() {
     $(".open").remove();
 }
 
-$(document).ready(function(){
-    // Search AJAX
-    $('#search').on("keyup", function(){
-        var input = $(this).val();
-        var action = 'search_members';
+function searchFilter(page_num) {
+    page_num = page_num ? page_num : 0;
+    var keywords = $('#keywords').val();
+    var sortBy = $('#sortBy').val();
 
-        $.ajax({
-            url: '/mrbig/includes/functions/all-members.inc.php',
-            method: "GET",
-            data: {
-                action,
-                input
-            },
-            success: data => {
-                $('#members').html(data)
-            }, 
-            error: (xhr, status, error) => {
-                console.log(error)
-            }
-        })
+    $.ajax({
+        type: 'POST',
+        url: './includes/functions/filterData.php',
+        data: 'page='+page_num+'&keywords='+keywords+'&sortBy='+sortBy,
+        // beforeSend: function () {
+        //     $('.loading-overlay').show();
+        // },
+        success: function (html) {
+            $('#members').html(html);
+            // $('.loading-overlay').fadeOut("slow");
+        }
     });
-
-    // Pagination AJAX
-    $('#search').on("keyup", function(){
-        var input = $(this).val();
-        var action = 'search_members';
-
-        $.ajax({
-            url: '/mrbig/includes/functions/all-members.inc.php',
-            method: "GET",
-            data: {
-                action,
-                input
-            },
-            success: data => {
-                $('#members').html(data)
-            }, 
-            error: (xhr, status, error) => {
-                console.log(error)
-            }
-        })
-    });
-});
+}
