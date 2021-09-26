@@ -32,46 +32,19 @@ function closeModal() {
     $(".open").remove();
 }
 
-$(document).ready(function(){
-    // Search AJAX
-    $('#search').on("keyup", function(){
-        var input = $(this).val();
-        var action = 'search_members';
-
-        $.ajax({
-            url: '/mrbig/includes/functions/all-members.inc.php',
-            method: "GET",
-            data: {
-                action,
-                input
-            },
-            success: data => {
-                $('#members').html(data)
-            }, 
-            error: (xhr, status, error) => {
-                console.log(error)
-            }
-        })
-    });
-
-    // Pagination AJAX
-    $('#search').on("keyup", function(){
-        var input = $(this).val();
-        var action = 'search_members';
-
-        $.ajax({
-            url: '/mrbig/includes/functions/all-members.inc.php',
-            method: "GET",
-            data: {
-                action,
-                input
-            },
-            success: data => {
-                $('#members').html(data)
-            }, 
-            error: (xhr, status, error) => {
-                console.log(error)
-            }
-        })
-    });
-});
+// Pagination and Search AJAX
+function displayResults(pageNum) {
+    $.ajax({
+        url: '/mrbig/includes/functions/members.inc.php',
+        method: "GET",
+        data: {
+            pageNum
+        },
+        success: data => {
+            $('#members').html(data);
+        }, 
+        error: (xhr, status, error) => {
+            console.log(error)
+        }
+    })
+}

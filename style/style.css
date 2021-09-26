@@ -230,42 +230,37 @@ button:focus {
   color: whitesmoke;
 }
 
-.pagination li a {
-  text-decoration: none;
-  margin: 0.5rem;
-  padding: 0.5rem 0.8rem;
-  border-radius: 50%;
-  color: whitesmoke;
-  background: #111;
-  -webkit-transition: 200ms ease-in;
-  transition: 200ms ease-in;
-}
-
-.pagination li a:hover {
-  background: whitesmoke;
-  color: #111;
-}
-
-.pagination .currentpage a {
-  background: crimson;
-}
-
-.pagination .currentpage a:hover {
-  color: crimson;
-}
-
-.pagination .prev a,
-.pagination .next a {
-  background: #333;
-  border-radius: 0.5rem;
-}
-
-.pagination .dots {
+.pagination span {
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  font-size: 1.3rem;
+  margin: 0.5rem;
+  color: whitesmoke;
+  -webkit-transition: 200ms ease-in;
+  transition: 200ms ease-in;
+}
+
+.pagination span:hover:not(.current) {
+  cursor: pointer;
+  background: whitesmoke;
+  color: #222;
+}
+
+.pagination .num {
+  background: #111;
+  border-radius: 50%;
+  padding: .5rem .8rem;
+}
+
+.pagination .current {
+  background: crimson;
+}
+
+.pagination .btn {
+  background: #444;
+  padding: .5rem;
+  border-radius: 0.5rem;
 }
 
 .container {
