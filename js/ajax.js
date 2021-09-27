@@ -52,11 +52,16 @@ function displayResults(pageNum) {
 
 // Delete memeber AJAX
 function deleteMember(id) {
+    var input = $('#search').val();
+    var pageNum = $('.current').text();
+
     $.ajax({
         url: '/mrbig/includes/functions/members.inc.php',
         method: "GET",
         data: {
-            delete: id
+            delete: id,
+            input,
+            pageNum
         },
         success: data => {
             $('#members').html(data);
@@ -69,11 +74,16 @@ function deleteMember(id) {
 
 // Extend memebership AJAX
 function extendMembership(id) {
+    var input = $('#search').val();
+    var pageNum = $('.current').text();
+
     $.ajax({
         url: '/mrbig/includes/functions/members.inc.php',
         method: "GET",
         data: {
-            extend: id
+            extend: id,
+            input,
+            pageNum
         },
         success: data => {
             $('#members').html(data);
@@ -90,6 +100,8 @@ function updateMember() {
     var from = $('#from').val();
     var to = $('#to').val();
     var id = $('#update').val();
+    var input = $('#search').val();
+    var pageNum = $('.current').text();
     
     $.ajax({
         url: '/mrbig/includes/functions/members.inc.php',
@@ -99,7 +111,9 @@ function updateMember() {
             name,
             surname,
             from,
-            to
+            to,
+            input,
+            pageNum
         },
         success: data => {
             closeModal()

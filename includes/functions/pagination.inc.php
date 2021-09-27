@@ -1,19 +1,6 @@
 <div class="pagination">
     <?php
         $num_pages = ceil($total_pages / $num_results_on_page);
-        
-        // Get pageNum from URL 
-        if(isset($_GET["pageNum"])){
-            $current_page = $_GET["pageNum"];
-        } else {
-            $current_page = 1;
-        }
-
-        // Get input from URL
-        if(isset($_GET["input"])){
-            $input = $_GET["input"];
-        }
-        $input = '';
 
         // First Button - only if the first page is not displayed
         if($current_page > 3) {
