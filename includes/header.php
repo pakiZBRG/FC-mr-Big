@@ -35,6 +35,8 @@
         <script src="https://kit.fontawesome.com/877dc3bb9e.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
         <script src="./js/ajax.js"></script>
         <script>
             if ( window.history.replaceState ) {

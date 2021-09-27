@@ -30,7 +30,7 @@
                 <label>Ime</label>
                 <input
                     type='name'
-                    name='name'
+                    id='name'
                     value="<?php echo $name; ?>"
                 />
             </div>
@@ -38,7 +38,7 @@
                 <label>Prezime</label>
                 <input
                     type='surname'
-                    name='surname'
+                    id='surname'
                     value="<?php echo $surname; ?>"
                 />
             </div>
@@ -46,7 +46,7 @@
                 <label>Od:</label>
                 <input
                     type='date'
-                    name='from'
+                    id='from'
                     required
                     value="<?php echo $from; ?>"
                 />
@@ -56,15 +56,15 @@
                 <label>Do:</label>
                 <input
                     type='date'
-                    name='to'
+                    id='to'
                     required
                     value="<?php echo $to; ?>"
                 />
                 <i class="fa fa-calendar"></i>
             </div>
-            <input type='hidden' name='id' value='<?php echo $id; ?>' />
+            <input type='hidden' id='update' value="<?php echo $id; ?>" />
             
-            <input type="submit" name='update' value='Azuriraj' class='btn'>
+            <button name='submit' class='btn' id='<?php echo $id; ?>' onclick='updateMember(); return false;'>Azuriraj</button>
         </form>
     </aside>
 </div>

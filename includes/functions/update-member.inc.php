@@ -2,12 +2,12 @@
 
     include 'db.inc.php';
 
-    if(isset($_POST["update"])){
-        $id = $_POST['id'];
-        $name = mysqli_real_escape_string($conn, $_POST["name"]);
-        $surname = mysqli_real_escape_string($conn, $_POST["surname"]);
-        $from = mysqli_real_escape_string($conn, $_POST["from"]);
-        $to = mysqli_real_escape_string($conn, $_POST["to"]);
+    if(isset($_GET["update"])){
+        $id = $_GET['update'];
+        $name = mysqli_real_escape_string($conn, $_GET["name"]);
+        $surname = mysqli_real_escape_string($conn, $_GET["surname"]);
+        $from = mysqli_real_escape_string($conn, $_GET["from"]);
+        $to = mysqli_real_escape_string($conn, $_GET["to"]);
         $today = date('Y-m-d');
         $today_format = substr(date_format(date_create($today), DATE_RFC1123), 4, 12);
 
@@ -18,9 +18,6 @@
             $stmt = mysqli_prepare($conn, $sql);
             mysqli_stmt_bind_param($stmt, "ssssi", $name, $surname, $from, $to, $id);
             mysqli_stmt_execute($stmt);
-            if($stmt) {
-                header("Location: /mrbig/admin.php?page=clanovi");
-            }
         }
     }
 

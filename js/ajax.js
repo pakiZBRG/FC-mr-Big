@@ -83,3 +83,30 @@ function extendMembership(id) {
         }
     })
 }
+
+function updateMember() {
+    var name = $('#name').val();
+    var surname = $('#surname').val();
+    var from = $('#from').val();
+    var to = $('#to').val();
+    var id = $('#update').val();
+    
+    $.ajax({
+        url: '/mrbig/includes/functions/members.inc.php',
+        method: "GET",
+        data: {
+            update: id,
+            name,
+            surname,
+            from,
+            to
+        },
+        success: data => {
+            closeModal()
+            $('#members').html(data);
+        }, 
+        error: (xhr, status, error) => {
+            console.log(error)
+        }
+    })
+}

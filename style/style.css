@@ -195,7 +195,7 @@ button:focus {
 }
 
 .menu--content h2 {
-  font-size: 9.5vw;
+  font-size: 10vw;
   line-height: 11vw;
   text-transform: uppercase;
   font-weight: bolder;
@@ -1158,7 +1158,6 @@ section .icons-figure .card p {
 
 .open .modal {
   position: fixed;
-  border-radius: 1rem;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);

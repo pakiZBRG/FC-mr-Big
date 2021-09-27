@@ -19,7 +19,6 @@
                     <input
                         type='email'
                         name='email'
-                        placeholder='neko@gmail.com'
                         value="<?php if(isset($_POST['email']) && !$status) echo $_POST['email']; ?>"
                     />
                 </div>
@@ -28,7 +27,6 @@
                     <input
                         type='text'
                         name='subject'
-                        placeholder='Nesto kreativno'
                         value="<?php if(isset($_POST['subject']) && !$status) echo $_POST['subject']; ?>"
                     />
                 </div>
