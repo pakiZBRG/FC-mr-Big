@@ -124,3 +124,30 @@ function updateMember() {
         }
     })
 }
+
+function sendContact() {
+    var email = $('#email').val();
+    var subject = $('#subject').val();
+    var message = $('#message').val();
+    var send = 'send';
+
+    $('#send').disabled = false;
+
+    $.ajax({
+        url: '/mrbig/includes/functions/contact-form.inc.php',
+        method: "GET",
+        data: {
+            email,
+            subject,
+            message,
+            send
+        },
+        success: data => {
+            $('#send').disabled = true;
+            $('#contact').html(data);
+        }, 
+        error: (xhr, status, error) => {
+            console.log(error)
+        }
+    })
+}

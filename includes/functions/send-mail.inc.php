@@ -5,16 +5,16 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require "vendor/autoload.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"])."/mrbig/vendor/autoload.php";
     $status = false;
 
-    if(isset($_POST["send"])) {
-        if($_POST["email"] == '' || $_POST["subject"] == '' || $_POST["message"] == '') {
+    if(isset($_GET["send"])) {
+        if($_GET["email"] == '' || $_GET["subject"] == '' || $_GET["message"] == '') {
             echo "<p class='error'>Popunite polja.</p>";
         } else {
-            $email = mysqli_real_escape_string($conn, $_POST["email"]);
-            $subject = mysqli_real_escape_string($conn, $_POST["subject"]);
-            $message = mysqli_real_escape_string($conn, $_POST["message"]);
+            $email = mysqli_real_escape_string($conn, $_GET["email"]);
+            $subject = mysqli_real_escape_string($conn, $_GET["subject"]);
+            $message = mysqli_real_escape_string($conn, $_GET["message"]);
 
             $mail = new PHPMailer(true);
             try {
