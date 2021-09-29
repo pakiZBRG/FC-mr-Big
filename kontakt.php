@@ -10,6 +10,7 @@
     <section class='contact'>
         <aside class='map' id='map'></aside>
         <article class='contact-form' id='contact'>
+            <h1>Posaljite nam poruku</h1>
             <?php include './includes/functions/contact-form.inc.php' ?>
         </article>
     </section>

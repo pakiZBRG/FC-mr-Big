@@ -22,6 +22,6 @@
         <label>Poruka</label>
         <textarea id='message' rows='7'><?php if(isset($_GET['message']) && !$status) echo $_GET['message']; ?></textarea>
     </div>
-    <!-- <input type='submit' name='send' value='Posaljite poruku' class='login_btn'/> -->
+
     <button name='send' id='send' class='login_btn' onclick='sendContact(); return false;'>Posaljite poruku</button>
 </form>

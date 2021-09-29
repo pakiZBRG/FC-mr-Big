@@ -98,31 +98,43 @@ function updateMember() {
     var name = $('#name').val();
     var surname = $('#surname').val();
     var from = $('#from').val();
+    date = new Date(from);
+    var fromFormat = date.toUTCString();
     var to = $('#to').val();
     var id = $('#update').val();
     var input = $('#search').val();
     var pageNum = $('.current').text();
+
+    var date = new Date();
+    var today = date.toISOString();
+
+    if(name.length == 0 || surname.length == 0 || from.length == 0 || to.length == 0) {
+        $('.center').html('<p class="error">Popunite polja.</p>')
+    } else if(today < from){
+        $('.center').html('<p class="error">Izaberite datum pre <b>'+fromFormat.substring(4, 16)+'</b>.</p>')
+    } else {
+        $.ajax({
+            url: '/mrbig/includes/functions/members.inc.php',
+            method: "GET",
+            data: {
+                update: id,
+                name,
+                surname,
+                from,
+                to,
+                input,
+                pageNum
+            },
+            success: data => {
+                closeModal()
+                $('#members').html(data);
+            }, 
+            error: (xhr, status, error) => {
+                console.log(error)
+            }
+        })
+    }
     
-    $.ajax({
-        url: '/mrbig/includes/functions/members.inc.php',
-        method: "GET",
-        data: {
-            update: id,
-            name,
-            surname,
-            from,
-            to,
-            input,
-            pageNum
-        },
-        success: data => {
-            closeModal()
-            $('#members').html(data);
-        }, 
-        error: (xhr, status, error) => {
-            console.log(error)
-        }
-    })
 }
 
 function sendContact() {
@@ -145,6 +157,32 @@ function sendContact() {
         success: data => {
             $('#send').disabled = true;
             $('#contact').html(data);
+        }, 
+        error: (xhr, status, error) => {
+            console.log(error)
+        }
+    })
+}
+
+function addMember() {
+    var name = $('#name').val();
+    var surname = $('#surname').val();
+    var from = $('#from').val();
+    var to = $('#to').val();
+    var create = 'create';
+
+    $.ajax({
+        url: '/mrbig/includes/functions/add-member.inc.php',
+        method: "GET",
+        data: {
+            name,
+            surname,
+            from,
+            to,
+            create
+        },
+        success: data => {
+            $('.center').html(data);
         }, 
         error: (xhr, status, error) => {
             console.log(error)

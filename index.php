@@ -5,7 +5,9 @@
 <main>
     <section class='container'>
         <article class='intro'>
-            <img src="./assets/images/mrBig4.jpg" alt='Mr Big'/>
+            <div class="intro-image">
+                <img src="./assets/images/mrBig4.jpg" alt='Mr Big'/>
+            </div>
             <div class='intro-content'>
                 <h3 class='intro-content__head'>O teretani</h3>
                 <h2 class='intro-content__subhead'>Pravilna rešenja za bezbednu izgradnju tela koja štede naše dragoceno vreme!</h2>
@@ -97,7 +99,7 @@
 
     <section>
         <h1 class='gallery-head'>Galerija</h1>
-        <div id='gallery' class="splide" style="width: 69%; margin: 2rem auto;">
+        <div id='gallery' class="splide">
             <div class="splide__track">
                 <ul class="splide__list">
                     <li class="splide__slide">

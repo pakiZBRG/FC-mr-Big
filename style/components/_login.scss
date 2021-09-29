@@ -1,22 +1,26 @@
-.login-form{
+.login-form {
     width: 30rem;
     margin: 1rem auto;
+    @include xs-screen {
+        width: 85%;
+    }
 
     @include formControl;
     
     @include btn;
 }
 
-.center{
+.center {
     display: flex;
     justify-content: center;
 
     & .error {
         background: transparent;
-        border: 1px solid #444;
-        color: #666;
+        border: 1px solid crimson;
+        color: crimson;
         padding: 0.7rem 2rem;
         text-align: center;
-        width: 25rem;
+        min-width: 18rem;
+
     }
 }

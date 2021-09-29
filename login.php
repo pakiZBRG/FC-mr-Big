@@ -22,7 +22,6 @@
             <input
                 type='email'
                 name='email'
-                placeholder='neko@gmail.com'
                 value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>"
             />
         </div>
@@ -31,10 +30,10 @@
             <input
                 type='password'
                 name='password' 
-                placeholder='********'
                 value="<?php if(isset($_POST['password'])) echo $_POST['password']; ?>"
             />
         </div>
+        
         <input type='submit' name='login' value='Uloguj se' class='btn'/>
     </form>
 </main>

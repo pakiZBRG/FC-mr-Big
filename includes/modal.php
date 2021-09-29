@@ -23,8 +23,9 @@
 <div class="open">
     <section class="overlay"></section>
     <aside class='modal'>
-        <h2>Izmena</h2>
         <button class='close' onclick='closeModal()'>&times;</button>
+        <h2>Izmena</h2>
+        <div style='margin-top: 1rem' class="center"></div>
         <form method='POST'>
             <div class='form_control'>
                 <label>Ime</label>

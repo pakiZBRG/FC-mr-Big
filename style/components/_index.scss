@@ -1,27 +1,47 @@
-.container{
+.container {
     width: 75%;
     margin: 2rem auto;
+    @include lg-screen {
+        width: 70%;
+    }
+    @include sm-screen {
+        width: 80%;
+    }
 
     & .intro{
-        margin: 10rem 0;
-        display: flex;
+        margin: calc(3.5em + 5vw) 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include lg-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-        & img {
+        &-image {
             position: relative;
             object-fit: cover;
-            margin: 0 2rem;
-            width: 50%;
-            box-shadow: -10px -10px 0 0 #222, -20px -20px 0 0 crimson;
-            transition: 400ms ease-out;
-
-            &:hover {
-                box-shadow: -0px -0px 0px 0px crimson;
+            margin: 0 1.5rem;
+            width: calc(10em + 30vw);
+            @include lg-screen {
+                width: 100%;
+                margin-bottom: 2rem;
+            }
+            & img {
+                width: 100%;
+                filter: grayscale(0%);
+                transition: all .5s ease-in-out;
+                &:hover {
+                    filter: grayscale(70%);
+                    transition: .5s ease-in-out;
+                }
             }
         }
 
-        & .intro-content {
-            margin: 0 2rem;
-            width: 50%;
+
+        &-content {
+            margin: 0 1.5rem;
+            width: 100%;
             color: whitesmoke;
             font-family: "Work Sans";
 
@@ -30,23 +50,23 @@
                 color: crimson;
                 text-transform: uppercase;
                 font-size: 2rem;
-                margin-left: 7rem;
+                margin-left: 5.5rem;
 
                 &::after{
                     display: block;
                     position: absolute;
                     content: '';
                     top: 1.2rem;
-                    left: -7rem;
+                    left: -5.5rem;
                     height: 1px;
-                    width: 5rem;
+                    width: calc(2em + .8vw);
                     background: crimson;
                 }
             }
 
             &__subhead{
-                margin: 2rem 0;
-                font-size: 2rem;
+                margin: 1rem 0;
+                font-size: calc(1.6em + .5vw);
             }
         }
     }
@@ -75,7 +95,7 @@ section .icons {
 
         & .card {
             user-select: none;
-            margin: 1rem;
+            margin: 0.5rem;
             padding: 1.5rem;
             width: 16rem;
             text-align: center;
@@ -139,22 +159,23 @@ section .icons {
     justify-content: space-evenly;
 
     &-card {
-        margin: 2rem;
+        margin: 1rem;
         display: flex;
         align-items: center;
         flex-direction: column;
+        background: #222;
         
         & img {
-            height: 12rem;
-            width: 12rem;
+            height: 18rem;
+            width: 16rem;
             object-fit: cover;
             object-position: center;
-            border-radius: 50%;
-            margin-bottom: 1.5rem;
+            margin-bottom: .5rem;
         }
 
         & p {
             font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         &__social a i {
@@ -162,5 +183,14 @@ section .icons {
             margin: 0.6rem;
             text-decoration: none;
         }
+    }
+}
+
+#gallery {
+    width: 75%;
+    margin: 2rem auto;
+    @include md-screen {
+        width: 100%;
+        margin: 0;
     }
 }

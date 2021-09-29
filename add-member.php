@@ -10,7 +10,7 @@
                     <label>Ime</label>
                     <input
                         type='name'
-                        name='name'
+                        id='name'
                         value="<?php if(isset($_POST['name']) && !$status) echo $_POST['name']; ?>"
                     />
                 </div>
@@ -18,7 +18,7 @@
                     <label>Prezime</label>
                     <input
                         type='surname'
-                        name='surname'
+                        id='surname'
                         value="<?php if(isset($_POST['surname']) && !$status) echo $_POST['surname']; ?>"
                     />
                 </div>
@@ -26,7 +26,7 @@
                     <label>Od:</label>
                     <input
                         type='date'
-                        name='from'
+                        id='from'
                         value="<?php if(isset($_POST['from']) && !$status) { echo $_POST['from']; } else { echo date('Y-m-d'); } ?>"
                         required
                     />
@@ -36,14 +36,14 @@
                     <label>Do:</label>
                     <input
                         type='date'
-                        name='to'
+                        id='to'
                         value="<?php if(isset($_POST['to']) && !$status) { echo $_POST['to']; } else { echo $to; } ?>"
                         required
                     />
                     <i class="fa fa-calendar"></i>
                 </div>
                 
-                <input type="submit" name='create' value='Dodaj' class='btn'>
+                <button name='submit' class='btn' onclick='addMember(); return false;'>Dodaj</button>
             </form>
         </div>  
     </section>

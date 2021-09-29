@@ -13,7 +13,7 @@
                     <p><a href="mailto:teretanamrbig@gmail.com">teretanamrbig@gmail.com</a></p>
                     <p>014/238-123</p>
                 </div>
-                <div>
+                <div class='footer-address'>
                     <p>Naselje Oslobodioci Valjeva</p>
                     <p>Valjevo, 14000</p>
                     <p>Srbija</p>

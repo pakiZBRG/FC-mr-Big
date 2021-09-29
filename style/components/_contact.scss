@@ -9,14 +9,14 @@
         width: 100%;
         object-fit: cover;
         opacity: 0.5;
-        border-bottom-left-radius: 10rem;
-        border-bottom-right-radius: 10rem;
+        border-bottom-left-radius: calc(1em + 7vw);
+        border-bottom-right-radius: calc(1em + 7vw);
     }
 
     & h1 {
         font-family: 'Roboto';
         text-transform: uppercase;
-        font-size: 6rem;
+        font-size: calc(2em + 5vw);
         -webkit-text-stroke-width: 1.5px;
         -webkit-text-stroke-color: whitesmoke;
         -webkit-text-fill-color: transparent;
@@ -30,16 +30,40 @@
     width: 80%;
     margin: 6rem auto;
     display: flex;
+    @include lg-screen{
+        flex-direction: column;
+    }
+    @include sm-screen {
+        width: 100%;
+    }
 
-    & aside{
+    & h1 {
+        color: whitesmoke;
+        text-align: center;
+        font-weight: lighter;
+        margin-bottom: 1rem;
+    }
+
+    & aside {
         width: 45%;
-        height: 30rem;
+        height: calc(21em + 10vw);
         margin: 1rem;
+        @include lg-screen{
+            width: 100%;
+            margin: 0;
+        }
     }
 
     & .contact-form{
         width: 45%;
         margin: 1rem auto;
+        @include lg-screen{
+            margin-top: 3rem;
+            width: 100%;
+        }
+        @include sm-screen {
+            width: 85%;
+        }
 
         @include formControl;
         
@@ -54,6 +78,9 @@
             font-family: 'Work Sans';
             margin-top: 1rem;
             transition: 300ms ease-out;
+            @include xs-screen {
+                width: 100%;
+            }
             &:hover{
                 background: whitesmoke;
                 color: #222;

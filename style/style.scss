@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Work Sans';
+    font-family: 'Montserrat';
     background: #111;
     overflow-x: hidden;
 }
@@ -75,6 +75,9 @@ button:focus {
         cursor: pointer;
         font-family: 'Work Sans';
         transition: 300ms ease-out;
+        @include xs-screen {
+            width: 100%;
+        }
         &:hover{
             background: whitesmoke;
             color: #222;
@@ -82,6 +85,7 @@ button:focus {
     }
 }
 
+@import "./components/breakpoints";
 @import "./components/nav";
 @import "./components/carousel";
 @import "./components/pagination";

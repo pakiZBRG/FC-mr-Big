@@ -38,12 +38,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
         <script src="./js/ajax.js"></script>
+        <script src="./js/mobileNav.js"></script>
         <script>
+            // Prevent resending forms on page refresh
             if ( window.history.replaceState ) {
                 window.history.replaceState( null, null, window.location.href );
             }
         </script>
-
     </head>
     
     <body>
