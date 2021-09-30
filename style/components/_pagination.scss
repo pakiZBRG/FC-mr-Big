@@ -1,14 +1,18 @@
 .pagination {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     list-style: none;
     width: 95%;
-    margin: 0 auto;
-    margin-top: 3.5rem;
+    margin: 2rem auto 4rem auto;
+    @include lg-screen{
+        margin-top: 1rem
+    }
     color: whitesmoke;
+    font-size: calc(0.65em + .2vw);
+
     & span {
         user-select: none;
-        margin: 0.5rem;
+        margin: 0.35rem;
         color: whitesmoke;
         transition: 200ms ease-in;
         &:hover:not(.current) {
@@ -21,22 +25,22 @@
     & .num {
         background: #111;
         border-radius: 50%;
-        padding: .5rem .8rem;
+        padding: calc(0.3em + .2vw) calc(0.7em + .2vw);
     }
 
     & .current {
         background: crimson;
     }
 
-    & .btn {
+    & .btn { 
         background: #444;
-        padding: .5rem;
-        border-radius: 0.5rem;
+        padding: calc(0.4em + .2vw);
+        border-radius: 0.4rem;
     }
-
-    & .show {
-        color: #555;
-        font-size: 1.1rem;
-        user-select: none;
-    }
+}
+.show {
+    font-size: 0.7rem;
+    margin: .5rem .5rem 0;
+    color: #666;
+    user-select: none;
 }

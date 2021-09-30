@@ -230,14 +230,14 @@ button:focus {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
     margin: 0.5rem;
-    border: 1px solid transparent;
+    border: 1px solid crimson;
     -webkit-transition: 200ms;
     transition: 200ms;
     border-radius: 2rem;
     color: crimson;
   }
   .mobile_navigation-links a:hover {
-    border-color: whitesmoke;
+    border-color: transparent;
     color: whitesmoke;
   }
   .mobile_navigation-links a li {
@@ -388,14 +388,20 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   list-style: none;
   width: 95%;
-  margin: 0 auto;
-  margin-top: 3.5rem;
+  margin: 2rem auto 4rem auto;
   color: whitesmoke;
+  font-size: calc(0.65em + .2vw);
+}
+
+@media only screen and (max-width: 1170px) {
+  .pagination {
+    margin-top: 1rem;
+  }
 }
 
 .pagination span {
@@ -403,7 +409,7 @@ button:focus {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin: 0.5rem;
+  margin: 0.35rem;
   color: whitesmoke;
   -webkit-transition: 200ms ease-in;
   transition: 200ms ease-in;
@@ -418,7 +424,7 @@ button:focus {
 .pagination .num {
   background: #111;
   border-radius: 50%;
-  padding: .5rem .8rem;
+  padding: calc(0.3em + .2vw) calc(0.7em + .2vw);
 }
 
 .pagination .current {
@@ -427,13 +433,14 @@ button:focus {
 
 .pagination .btn {
   background: #444;
-  padding: .5rem;
-  border-radius: 0.5rem;
+  padding: calc(0.4em + .2vw);
+  border-radius: 0.4rem;
 }
 
-.pagination .show {
-  color: #555;
-  font-size: 1.1rem;
+.show {
+  font-size: 0.7rem;
+  margin: .5rem .5rem 0;
+  color: #666;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -1023,7 +1030,8 @@ section .icons-figure .card p {
 }
 
 .admin {
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1031,14 +1039,24 @@ section .icons-figure .card p {
 }
 
 .admin-nav {
-  width: 16rem;
-  height: 100%;
+  width: 12rem;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media only screen and (max-width: 767px) {
+  .admin-nav {
+    display: none;
+  }
 }
 
 .admin-nav__width {
@@ -1068,6 +1086,7 @@ section .icons-figure .card p {
   color: #777;
   text-transform: uppercase;
   padding: 1rem;
+  font-size: 0.9rem;
   -webkit-transition: background 400ms, color 200ms;
   transition: background 400ms, color 200ms;
 }
@@ -1075,18 +1094,12 @@ section .icons-figure .card p {
 .admin-nav__width ul a li:hover {
   background: rgba(220, 20, 60, 0.2);
   border-right: 4px solid crimson;
-  color: whitesmoke;
+  color: crimson !important;
 }
 
 .admin-nav__width ul a li i {
   font-size: 0.9rem;
   margin-right: 0.4rem;
-}
-
-.admin-nav__width ul #main {
-  color: #444;
-  padding: 1rem;
-  font-size: 1.5rem;
 }
 
 .admin-nav img {
@@ -1095,10 +1108,14 @@ section .icons-figure .card p {
      object-fit: contain;
 }
 
-.admin-add {
+.admin-section {
   background: #222;
   width: 100%;
-  padding: 2rem;
+}
+
+.admin-add {
+  width: 90%;
+  margin: 1rem auto;
 }
 
 .admin-add h1 {
@@ -1108,7 +1125,19 @@ section .icons-figure .card p {
 }
 
 .admin-add__form {
-  width: 30rem;
+  width: calc(15em + 15vw);
+}
+
+@media only screen and (max-width: 767px) {
+  .admin-add__form {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .admin-add__form {
+    wdith: 100%;
+  }
 }
 
 .admin-add__form .form_control {
@@ -1206,8 +1235,14 @@ section .icons-figure .card p {
   padding: 2rem;
 }
 
+@media only screen and (max-width: 1170px) {
+  .admin-section {
+    padding: .5rem;
+  }
+}
+
 .admin-section .search {
-  margin: 1rem;
+  margin: 0.5rem;
   position: relative;
 }
 
@@ -1218,7 +1253,7 @@ section .icons-figure .card p {
   text-indent: 0.2rem;
   border-radius: 0.2rem;
   color: whitesmoke;
-  font-size: 1rem;
+  font-size: .9rem;
   width: 20rem;
 }
 
@@ -1248,11 +1283,10 @@ section .icons-figure .card p {
 .admin-section h1 {
   color: whitesmoke;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .admin-members {
-  height: 70vh;
   overflow-y: visible;
   overflow-x: hidden;
 }
@@ -1268,13 +1302,13 @@ section .icons-figure .card p {
   -webkit-box-shadow: 2px 2px 8px #000;
           box-shadow: 2px 2px 8px #000;
   color: whitesmoke;
-  border-radius: 1rem;
+  border-radius: .7rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin: 1rem;
-  padding: 0.8rem 1.5rem;
+  margin: 0.7rem 0.5rem;
+  padding: calc(.4em + .5vw) calc(.4em + 1.1vw);
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
@@ -1283,8 +1317,8 @@ section .icons-figure .card p {
   border-color: #333;
   background: #333;
   color: whitesmoke;
-  -webkit-transform: translateY(-5px);
-          transform: translateY(-5px);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .admin-members__info {
@@ -1298,15 +1332,77 @@ section .icons-figure .card p {
   -webkit-box-shadow: 2px 2px 8px #000;
           box-shadow: 2px 2px 8px #000;
   color: #222;
-  border-radius: 1rem;
+  border-radius: .7rem;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  margin: 1rem;
-  padding: 1rem 1.5rem;
+  margin: .5rem;
+  padding: calc(.4em + .5vw) calc(.4em + 1.1vw);
   -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
+}
+
+@media only screen and (max-width: 1170px) {
+  .admin-members__info {
+    -webkit-box-pack: initial;
+        -ms-flex-pack: initial;
+            justify-content: initial;
+  }
+}
+
+.admin-members__info .progress {
+  width: 22.5%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1170px) {
+  .admin-members__info .progress {
+    display: none;
+  }
+}
+
+.admin-members__info .status {
+  font-size: calc(0.7em + .3vw);
+  margin: 0 auto;
+}
+
+.id {
+  font-size: calc(0.7em + .3vw);
+  width: 2rem;
+}
+
+.name {
+  width: 20%;
+  font-size: calc(0.7em + .3vw);
+}
+
+@media only screen and (max-width: 1170px) {
+  .name {
+    width: 15rem;
+  }
+}
+
+.from {
+  width: 12.5%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1170px) {
+  .from {
+    display: none;
+  }
+}
+
+.to {
+  width: 12.5%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1170px) {
+  .to {
+    display: none;
+  }
 }
 
 .progress-bar {
@@ -1318,6 +1414,12 @@ section .icons-figure .card p {
   height: 1rem;
   border-radius: 1rem;
   position: relative;
+}
+
+@media only screen and (max-width: 1170px) {
+  .progress-bar {
+    display: none;
+  }
 }
 
 .progress-bar__fill {
@@ -1340,6 +1442,12 @@ section .icons-figure .card p {
   text-transform: uppercase;
   overflow: hidden;
   display: block;
+}
+
+@media only screen and (max-width: 1170px) {
+  .extend {
+    display: none;
+  }
 }
 
 .extend span {
@@ -1376,10 +1484,11 @@ section .icons-figure .card p {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 15%;
+  font-size: calc(0.7em + .3vw);
   text-align: center;
   border-radius: 1rem;
   text-transform: uppercase;
-  width: 7rem;
+  width: calc(6em + 3.5vw);
   margin: 0 auto;
   padding: 0.2rem;
 }
@@ -1395,6 +1504,7 @@ section .icons-figure .card p {
 }
 
 .action {
+  font-size: calc(0.7em + .3vw);
   width: 12.5%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1404,28 +1514,34 @@ section .icons-figure .card p {
           justify-content: center;
 }
 
-.action a, .action button {
-  padding: 0.5rem;
-  width: 2rem;
+@media only screen and (max-width: 1170px) {
+  .action {
+    margin-left: .5rem;
+  }
+}
+
+.action button {
+  height: calc(1.8em + 0.5vw);
+  width: calc(1.8em + 0.5vw);
   text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;
   margin: 0 0.3rem;
+  border: none;
+  font-size: calc(0.7em + .2vw);
+  background: #333;
   -webkit-transition: background 300ms, color 200ms;
   transition: background 300ms, color 200ms;
 }
 
 .action .delete {
-  padding: 0.5rem;
-  width: 2rem;
-  text-align: center;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  margin: 0 0.3rem;
-  -webkit-transition: background 300ms, color 200ms;
-  transition: background 300ms, color 200ms;
   color: crimson;
-  background: #333;
+}
+
+@media only screen and (max-width: 1170px) {
+  .action .delete {
+    display: none;
+  }
 }
 
 .action .delete:hover {
@@ -1435,8 +1551,12 @@ section .icons-figure .card p {
 
 .action .edit {
   color: DodgerBlue;
-  background: #333;
-  border: none;
+}
+
+@media only screen and (max-width: 1170px) {
+  .action .edit {
+    display: none;
+  }
 }
 
 .action .edit:hover {
@@ -1444,9 +1564,76 @@ section .icons-figure .card p {
   color: whitesmoke;
 }
 
+.action .moreInfo {
+  display: none;
+  color: BlueViolet;
+}
+
+.action .moreInfo:hover {
+  background: BlueViolet;
+  color: whitesmoke;
+}
+
+@media only screen and (max-width: 1170px) {
+  .action .moreInfo {
+    display: block;
+  }
+}
+
 .active {
-  border-right: 4px solid crimson;
-  color: crimson !important;
+  border-right: 4px solid whitesmoke;
+  color: whitesmoke !important;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media only screen and (max-width: 767px) {
+  .mobile-nav {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .mobile-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background: #161616;
+  }
+  .mobile-nav ul a {
+    text-decoration: none;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%;
+    text-align: center;
+    font-size: 0.8rem;
+    -webkit-transition: 200ms ease-in;
+    transition: 200ms ease-in;
+  }
+  .mobile-nav ul a:hover {
+    background: rgba(220, 20, 60, 0.2);
+  }
+  .mobile-nav ul a:hover li {
+    color: crimson !important;
+    border-color: crimson !important;
+  }
+  .mobile-nav ul a li {
+    -webkit-transition: 200ms ease-in;
+    transition: 200ms ease-in;
+    color: #777;
+    border-top: 3px solid transparent;
+    padding: .6rem;
+  }
+}
+
+.mobile-active {
+  border-color: whitesmoke !important;
+  color: whitesmoke !important;
 }
 
 .open {

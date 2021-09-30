@@ -1,11 +1,11 @@
 <div class='admin-members__info'>
-    <p style='width: 5%'>ID</p>
-    <p style='width: 20%'>Ime</p>
-    <p style='width: 12.5%;  text-align: center'>Od</p>
-    <p style='width: 12.5%;  text-align: center'>Do</p>
-    <p style='width: 22.5%; text-align: center'>Progres</p>
-    <p style='width: 15%; text-align: center'>Status</p>
-    <p style='width: 12.5%; text-align: center'>Akcija</p>
+    <p class='id'>ID</p>
+    <p class='name'>Ime</p>
+    <p class='from'>Od</p>
+    <p class='to'>Do</p>
+    <p class='progress'>Progres</p>
+    <p class='status'>Status</p>
+    <p class='action'>Akcija</p>
 </div>
 
 <?php
@@ -79,27 +79,29 @@
         } else {
             $progressElement = "
                 <div class='progress-bar'>
-                    <div class='progress-bar__fill' style='width: $progressFill%'>
-                    </div>
+                    <div class='progress-bar__fill' style='width: $progressFill%'></div>
                 </div>
             ";
         }
 
         echo "
-            <div class='admin-members__single'>
-                <p style='width: 5%' id='id'>$id</p>
-                <p style='width: 20%'>$name $surname</p>
-                <p style='width: 12.5%; text-align: center'>$fromFormat</p>
-                <p style='width: 12.5%; text-align: center'>$toFormat</p>
+            <div class='admin-members__single' id='card'>
+                <p class='id' id='id'>$id.</p>
+                <p class='name'>$name $surname</p>
+                <p class='from'>$fromFormat</p>
+                <p class='to'>$toFormat</p>
                 $progressElement
                 $element
                 <div class='action'>
-                    <span class='delete' onclick='deleteMember($id)'>
+                    <button class='delete' onclick='deleteMember($id)'>
                         <i class='fa fa-trash'></i>
-                    </span>
+                    </button>
                     <button class='edit' onclick='openUpdateModal(this)'>
                         <i class='fa fa-edit'></i>
                         <input type='hidden' name='id' value='$id'/>
+                    </button>
+                    <button class='moreInfo' onclick='openMemberInfo(this)'>
+                        <i class='fa fa-arrow-down'></i>
                     </button>
                 </div>
             </div>
@@ -107,3 +109,9 @@
     }
     
 ?>
+
+<!-- <div class='admin-members__single-expand'>
+    <div>Od $fromFormat</div>
+    <div>Do $toFormat</div>
+    <div>Progres $progressElement</div>
+</div> -->

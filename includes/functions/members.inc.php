@@ -10,7 +10,7 @@
     }
     // pagination
     $page = isset($_GET['pageNum']) && is_numeric($_GET['pageNum']) ? $_GET['pageNum'] : 1;
-    $num_results_on_page = 7;
+    $num_results_on_page = 10;
     $total_pages = $conn->query('SELECT * FROM members')->num_rows;
     $calc_page = ($page - 1) * $num_results_on_page;
 

@@ -1,9 +1,17 @@
+<div class="range">
+    <?php
+        if($calc_page + $num_results_on_page > $total_pages) {
+            echo "<p class='show'>Prikaz $calc_page - $total_pages</p>";
+        } else {
+            echo "<p class='show'>Prikaz $calc_page - ".$calc_page+$num_results_on_page."</p>";
+        }
+    ?>
+</div>
+
 <div class="pagination">
-    <div></div>
     <?php
         $num_pages = ceil($total_pages / $num_results_on_page);
 
-        echo "<div>";
         // First Button - only if the first page is not displayed
         if($current_page > 3) {
             echo "<span class='btn' onclick='displayResults(1)'>First</span>";
@@ -36,14 +44,6 @@
         if($current_page < $num_pages - 2){
             echo "<span class='btn' onclick='displayResults($num_pages)'>Last</span>";
         }
-
-        echo "</div><div>";
-        if($calc_page+$num_results_on_page > $total_pages) {
-            echo "<p class='show'>Prikaz $calc_page - $total_pages</p>";
-        } else {
-            echo "<p class='show'>Prikaz $calc_page - ".$calc_page+$num_results_on_page."</p>";
-        }
-        echo "</div>";
     ?>
 
 </div>

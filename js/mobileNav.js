@@ -12,4 +12,10 @@ $('document').ready(function() {
         menu.removeClass('hide');
         content.removeClass('reveal');
     })
-})
+});
+
+function openMemberInfo(el) {
+    var card = $('#card');
+
+    card.toggleClass('expand', 300)
+}

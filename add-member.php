@@ -1,6 +1,6 @@
 <main class='admin'>
-    <section class='admin-add'>
-        <div style='width: 80%; margin: 2rem auto;'>
+    <section class='admin-section'>
+        <div class='admin-add'>
             <h1>Dodaj Novog Clana</h1>
             <div class="center" style='margin-bottom: 1rem'>
                 <?php include './includes/functions/add-member.inc.php' ?>

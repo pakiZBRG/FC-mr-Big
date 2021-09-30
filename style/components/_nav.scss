@@ -166,12 +166,12 @@
                 padding: 1rem;
                 flex-basis: 25%;
                 margin: 0.5rem;
-                border: 1px solid transparent;
+                border: 1px solid crimson;
                 transition: 200ms;
                 border-radius: 2rem;
                 color: crimson;
                 &:hover{
-                    border-color: whitesmoke;
+                    border-color: transparent;
                     color: whitesmoke;
                 }
                 & li {
