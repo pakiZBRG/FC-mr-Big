@@ -51,7 +51,6 @@
                     required
                     value="<?php echo $from; ?>"
                 />
-                <i class="fa fa-calendar"></i>
             </div>
             <div class='form_control'>
                 <label>Do:</label>
@@ -61,7 +60,6 @@
                     required
                     value="<?php echo $to; ?>"
                 />
-                <i class="fa fa-calendar"></i>
             </div>
             <input type='hidden' id='update' value="<?php echo $id; ?>" />
             

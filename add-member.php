@@ -30,7 +30,6 @@
                         value="<?php if(isset($_POST['from']) && !$status) { echo $_POST['from']; } else { echo date('Y-m-d'); } ?>"
                         required
                     />
-                    <i class="fa fa-calendar"></i>
                 </div>
                 <div class='form_control'>
                     <label>Do:</label>
@@ -40,7 +39,6 @@
                         value="<?php if(isset($_POST['to']) && !$status) { echo $_POST['to']; } else { echo $to; } ?>"
                         required
                     />
-                    <i class="fa fa-calendar"></i>
                 </div>
                 
                 <button name='submit' class='btn' onclick='addMember(); return false;'>Dodaj</button>
