@@ -26,7 +26,7 @@
                         session_start();
                         $_SESSION["id"] = $row["id"];
                         $_SESSION["email"] = $row["email"];
-                        header("Location: /admin.php/clanovi");
+                        header("Location: /admin/clanovi");
                         exit();
                     }
                 }
