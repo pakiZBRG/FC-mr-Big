@@ -1,4 +1,4 @@
-<?php include '/includes/header.php'?>
+<?php include './includes/header.php'?>
 
 <main class='not-found'>
     <div class='not-found__center'>
@@ -8,4 +8,4 @@
     </div>
 </main>
 
-<?php include '/includes/footer.php'?>
+<?php include './includes/footer.php'?>

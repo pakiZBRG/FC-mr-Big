@@ -14,7 +14,7 @@
             <a href="/">
                 <li><i class="fa fa-home"></i> Pocetna</li>
             </a>
-            <a href='./includes/functions/logout.inc.php'>
+            <a href='./functions/logout.inc.php'>
                 <li><i class="fa fa-sign-out"></i> Odjavi se</li>
             </a>
         </ul>
@@ -43,7 +43,7 @@
                 <i class="fa fa-home"></i><p>Pocetna</p>
             </li>
         </a>
-        <a href='./includes/functions/logout.inc.php'>
+        <a href='./functions/logout.inc.php'>
             <li>
                 <i class="fa fa-sign-out"></i><p>Odjavi se</p>
             </li>

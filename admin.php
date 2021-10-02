@@ -1,12 +1,12 @@
-<?php include '/includes/header.php'?>
+<?php include './includes/header.php'?>
 <?php 
     if(!isset($_SESSION["email"])) {
-        header("Location: /mrbig");
+        header("Location: /");
     }
 ?>
 
 <main class='admin'>
-    <?php include '/includes/admin-nav.php' ?>
+    <?php include './includes/admin-nav.php' ?>
 
     <?php
         if(isset($_GET["page"])) {
