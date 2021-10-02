@@ -15,7 +15,7 @@ $('document').ready(function() {
 });
 
 function openMemberInfo(el) {
-    var card = $('#card');
+    var card = $(`.${el}`);
 
-    card.toggleClass('expand', 300)
+    card.toggleClass('view')
 }

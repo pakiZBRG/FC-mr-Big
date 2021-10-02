@@ -1,17 +1,17 @@
 <nav class='admin-nav'>
     <div class="admin-nav__width">
         <ul>
-            <a href="admin.php?page=clanovi">
+            <a href="/mrbig/admin/clanovi">
                 <li <?php if(str_contains($_SERVER["REQUEST_URI"], "clanovi")) echo "class='active'" ?>>
                     <i class="fa fa-users"></i> Clanovi
                 </li>
             </a>
-            <a href="admin.php?page=dodaj">
+            <a href="/mrbig/admin/dodaj">
                 <li <?php if(str_contains($_SERVER["REQUEST_URI"], "dodaj")) echo "class='active'" ?>>
                     <i class="fa fa-user-plus"></i> Nov clan
                 </li>
             </a>
-            <a href="index">
+            <a href="/mrbig">
                 <li><i class="fa fa-home"></i> Pocetna</li>
             </a>
             <a href='./includes/functions/logout.inc.php'>
@@ -28,17 +28,17 @@
 <!-- Mobile Responsive Navbar -->
 <nav class='mobile-nav'>
     <ul>
-        <a href="admin.php?page=clanovi">
+        <a href="/mrbig/admin/clanovi">
             <li <?php if(str_contains($_SERVER["REQUEST_URI"], "clanovi")) echo "class='mobile-active'" ?>>
                 <i class="fa fa-users"></i><p>Clanovi</p>
             </li>
         </a>
-        <a href="admin.php?page=dodaj">
+        <a href="/mrbig/admin/dodaj">
             <li <?php if(str_contains($_SERVER["REQUEST_URI"], "dodaj")) echo "class='mobile-active'" ?>>
                 <i class="fa fa-user-plus"></i><p>Nov clan</p>
             </li>
         </a>
-        <a href="index">
+        <a href="/mrbig">
             <li>
                 <i class="fa fa-home"></i><p>Pocetna</p>
             </li>

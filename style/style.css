@@ -60,7 +60,7 @@ button:focus {
 .navigation_img h2 {
   text-transform: uppercase;
   margin-left: 2rem;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: whitesmoke;
   font-family: 'Roboto';
 }
@@ -84,10 +84,10 @@ button:focus {
 }
 
 .navigation_links li {
-  margin-right: 3rem;
+  margin-right: 2.5rem;
   -webkit-transition: ease 0.35s all;
   transition: ease 0.35s all;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .navigation_links li a {
@@ -179,7 +179,7 @@ button:focus {
     -webkit-transition: 500ms;
     transition: 500ms;
     position: absolute;
-    bottom: -40vh;
+    bottom: -100vh;
     right: 0;
     width: 100vw;
     border-top-left-radius: 3rem;
@@ -335,7 +335,7 @@ button:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.4;
+  opacity: 0.3;
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-transform-origin: center;
@@ -363,7 +363,7 @@ button:focus {
 }
 
 .menu--content h2 {
-  font-size: calc(1em + 10vw);
+  font-size: calc(1.5em + 9vw);
   line-height: 1.1em;
   text-transform: uppercase;
   font-weight: bolder;
@@ -438,7 +438,7 @@ button:focus {
 }
 
 .show {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin: .5rem .5rem 0;
   color: #666;
   -webkit-user-select: none;
@@ -693,7 +693,6 @@ section .icons-figure .card p {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #222;
 }
 
 .flex-card img {
@@ -730,7 +729,7 @@ section .icons-figure .card p {
 }
 
 .hero-img {
-  height: 50vh;
+  height: 40vh;
   position: relative;
   width: 100vw;
   -webkit-user-select: none;
@@ -744,7 +743,7 @@ section .icons-figure .card p {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  opacity: 0.5;
+  opacity: 0.4;
   border-bottom-left-radius: calc(1em + 7vw);
   border-bottom-right-radius: calc(1em + 7vw);
 }
@@ -1317,8 +1316,8 @@ section .icons-figure .card p {
   border-color: #333;
   background: #333;
   color: whitesmoke;
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  -webkit-transform: scale(1.006);
+          transform: scale(1.006);
 }
 
 .admin-members__info {
@@ -1365,6 +1364,85 @@ section .icons-figure .card p {
 .admin-members__info .status {
   font-size: calc(0.7em + .3vw);
   margin: 0 auto;
+}
+
+.extend {
+  cursor: pointer;
+  width: 22.5%;
+  background: whitesmoke;
+  padding: 0.3rem 0;
+  border-radius: 1rem;
+  text-align: center;
+  color: #111;
+  border: 1px solid whitesmoke;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+}
+
+@media only screen and (max-width: 1170px) {
+  .extend {
+    display: none;
+  }
+}
+
+.extend span {
+  display: block;
+  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.extend::after {
+  content: attr(data-link-alt);
+  color: #111;
+  display: inline;
+  position: absolute;
+  -webkit-transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  top: 100%;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.extend:hover span {
+  -webkit-transform: translateY(110%);
+          transform: translateY(110%);
+}
+
+.extend:hover::after {
+  top: 20%;
+}
+
+.expand {
+  display: none;
+  width: inherit;
+  padding: calc(.4em + .5vw) calc(.4em + 1.1vw);
+  background: #141414;
+  color: whitesmoke;
+  border-radius: .7rem;
+  -webkit-box-shadow: 2px 2px 8px #000;
+          box-shadow: 2px 2px 8px #000;
+  width: 95%;
+  margin: 0 auto;
+  font-size: calc(0.7em + .3vw);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media only screen and (max-width: 1170px) {
+  .view {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+  }
 }
 
 .id {
@@ -1428,58 +1506,6 @@ section .icons-figure .card p {
   background: crimson;
 }
 
-.extend {
-  cursor: pointer;
-  width: 22.5%;
-  background: whitesmoke;
-  padding: 0.3rem 0;
-  border-radius: 1rem;
-  text-align: center;
-  color: #111;
-  border: 1px solid whitesmoke;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  overflow: hidden;
-  display: block;
-}
-
-@media only screen and (max-width: 1170px) {
-  .extend {
-    display: none;
-  }
-}
-
-.extend span {
-  display: block;
-  -webkit-transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.extend::after {
-  content: attr(data-link-alt);
-  color: #111;
-  display: inline;
-  position: absolute;
-  -webkit-transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: top 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  top: 100%;
-  left: 0;
-  right: 0;
-  text-align: center;
-}
-
-.extend:hover span {
-  -webkit-transform: translateY(110%);
-          transform: translateY(110%);
-}
-
-.extend:hover::after {
-  top: 20%;
-}
-
 .isDone {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -1503,7 +1529,7 @@ section .icons-figure .card p {
   background: rgba(46, 139, 86, 0.2);
 }
 
-.action {
+.action, .action-mobile {
   font-size: calc(0.7em + .3vw);
   width: 12.5%;
   display: -webkit-box;
@@ -1515,69 +1541,74 @@ section .icons-figure .card p {
 }
 
 @media only screen and (max-width: 1170px) {
-  .action {
+  .action, .action-mobile {
     margin-left: .5rem;
   }
 }
 
-.action button {
+.action button, .action-mobile button {
   height: calc(1.8em + 0.5vw);
   width: calc(1.8em + 0.5vw);
+  min-width: 1.5rem;
   text-align: center;
   border-radius: 0.5rem;
   cursor: pointer;
-  margin: 0 0.3rem;
+  margin: 0 calc(0.1em + .2vw);
   border: none;
-  font-size: calc(0.7em + .2vw);
+  font-size: calc(0.9em + .1vw);
   background: #333;
   -webkit-transition: background 300ms, color 200ms;
   transition: background 300ms, color 200ms;
 }
 
-.action .delete {
+.action .delete, .action-mobile .delete {
   color: crimson;
 }
 
 @media only screen and (max-width: 1170px) {
-  .action .delete {
+  .action .delete, .action-mobile .delete {
     display: none;
   }
 }
 
-.action .delete:hover {
+.action .delete:hover, .action-mobile .delete:hover {
   background: crimson;
   color: whitesmoke;
 }
 
-.action .edit {
+.action .edit, .action-mobile .edit {
   color: DodgerBlue;
 }
 
 @media only screen and (max-width: 1170px) {
-  .action .edit {
+  .action .edit, .action-mobile .edit {
     display: none;
   }
 }
 
-.action .edit:hover {
+.action .edit:hover, .action-mobile .edit:hover {
   background: DodgerBlue;
   color: whitesmoke;
 }
 
-.action .moreInfo {
+.action .moreInfo, .action-mobile .moreInfo {
   display: none;
   color: BlueViolet;
 }
 
-.action .moreInfo:hover {
+.action .moreInfo:hover, .action-mobile .moreInfo:hover {
   background: BlueViolet;
   color: whitesmoke;
 }
 
 @media only screen and (max-width: 1170px) {
-  .action .moreInfo {
+  .action .moreInfo, .action-mobile .moreInfo {
     display: block;
   }
+}
+
+.action-mobile .edit, .action-mobile .delete {
+  display: block;
 }
 
 .active {
@@ -1631,6 +1662,11 @@ section .icons-figure .card p {
   }
 }
 
+.mobile-status {
+  padding: .1rem .4rem;
+  border-radius: 1rem;
+}
+
 .mobile-active {
   border-color: whitesmoke !important;
   color: whitesmoke !important;
@@ -1646,7 +1682,7 @@ section .icons-figure .card p {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  width: 45rem;
+  width: 35rem;
   background: rgba(17, 17, 17, 0.8);
   -webkit-backdrop-filter: blur(13px) brightness(90%);
           backdrop-filter: blur(13px) brightness(90%);
@@ -1655,6 +1691,13 @@ section .icons-figure .card p {
   z-index: 10;
   -webkit-transition: 2s ease-out;
   transition: 2s ease-out;
+}
+
+@media only screen and (max-width: 575px) {
+  .open .modal {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .open .modal .form_control {
@@ -1767,7 +1810,7 @@ section .icons-figure .card p {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  overflow: hidden;
   background: rgba(17, 17, 17, 0.6);
   z-index: 9;
   -webkit-backdrop-filter: blur(5px);

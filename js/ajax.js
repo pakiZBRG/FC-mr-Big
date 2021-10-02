@@ -1,5 +1,10 @@
 function openUpdateModal(e) {
     var memberId = e.lastElementChild.value;
+    var body = document.body,
+        html = document.documentElement;
+
+    var height = Math.max(body.scrollHeight, body.offsetHeight, 
+                          html.clientHeight, html.scrollHeight, html.offsetHeight);
 
     // Open modal AJAX
     $.ajax({
@@ -9,8 +14,10 @@ function openUpdateModal(e) {
             memberId
         },
         success: data => {
-            $('.admin-section').append(data)
+            $('body').append(data)
             $(".open").toggle();
+            $('.overlay').css('height', height);
+            $('html, body').css('overflow', 'hidden');
         }, 
         error: (xhr, status, error) => {
             console.log(error)
@@ -28,6 +35,7 @@ $(document).click(function(e) {
 // close modal by clicking x
 function closeModal() {
     $(".open").remove();
+    $('html, body').css('overflow', 'auto');
 }
 
 // Pagination and Search AJAX

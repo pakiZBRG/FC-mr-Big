@@ -6,7 +6,7 @@
     }
 ?>
 
-<main style='min-height: 100vh'>
+<main>
     <figure class='hero-img' style='margin-bottom: 3rem;'>
         <img src="./assets/images/login.jpg" alt='Mr Big login'/>
         <h1>Login</h1>

@@ -84,34 +84,54 @@
             ";
         }
 
+        // koliko dana je ostalo
+        if($today < 1) {
+            $left = "
+                <a class='mobile-status expired' style='cursor: pointer;' onclick='extendMembership($id)'>
+                    <span>Produzi</span>
+                </a>
+            ";
+        } else {
+            $left = "<p class='mobile-status lasts'>$today dana</p>";
+        }
+
         echo "
-            <div class='admin-members__single' id='card'>
-                <p class='id' id='id'>$id.</p>
-                <p class='name'>$name $surname</p>
-                <p class='from'>$fromFormat</p>
-                <p class='to'>$toFormat</p>
-                $progressElement
-                $element
-                <div class='action'>
-                    <button class='delete' onclick='deleteMember($id)'>
-                        <i class='fa fa-trash'></i>
-                    </button>
-                    <button class='edit' onclick='openUpdateModal(this)'>
-                        <i class='fa fa-edit'></i>
-                        <input type='hidden' name='id' value='$id'/>
-                    </button>
-                    <button class='moreInfo' onclick='openMemberInfo(this)'>
-                        <i class='fa fa-arrow-down'></i>
-                    </button>
+            <div>
+                <div class='admin-members__single' id='card'>
+                    <p class='id' id='id'>$id.</p>
+                    <p class='name'>$name $surname</p>
+                    <p class='from'>$fromFormat</p>
+                    <p class='to'>$toFormat</p>
+                    $progressElement
+                    $element
+                    <div class='action'>
+                        <button class='delete' onclick='deleteMember($id)'>
+                            <i class='fa fa-trash'></i>
+                        </button>
+                        <button class='edit' onclick='openUpdateModal(this)'>
+                            <i class='fa fa-edit'></i>
+                            <input type='hidden' name='id' value='$id'/>
+                        </button>
+                        <button class='moreInfo' onclick='openMemberInfo($id)'>
+                            <i class='fa fa-arrow-down'></i>
+                        </button>
+                    </div>
+                </div>
+                <div class='expand $id'>
+                    <div><span style='font-size: 0.7rem; color: gray;'>Do:</span> $toFormat</div>
+                    <div>$left</div>
+                    <div class='action-mobile'>
+                        <button class='delete' onclick='deleteMember($id)'>
+                            <i class='fa fa-trash'></i>
+                        </button>
+                        <button class='edit' onclick='openUpdateModal(this)'>
+                            <i class='fa fa-edit'></i>
+                            <input type='hidden' name='id' value='$id'/>
+                        </button>
+                    </div>
                 </div>
             </div>
         ";
     }
     
 ?>
-
-<!-- <div class='admin-members__single-expand'>
-    <div>Od $fromFormat</div>
-    <div>Do $toFormat</div>
-    <div>Progres $progressElement</div>
-</div> -->

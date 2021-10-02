@@ -24,7 +24,7 @@
             <li><a href="/mrbig/kontakt" data-link-alt="Kontakt"><span>Kontakt</span></a></li>
             <?php 
                 if(isset($_SESSION['email'])){
-                    echo '<li><a href="/mrbig/admin.php?page=clanovi" data-link-alt="Clanovi"><span>Clanovi</span></a></li>';
+                    echo '<li><a href="/mrbig/admin/clanovi" data-link-alt="Clanovi"><span>Clanovi</span></a></li>';
                 } else {
                     echo '<li><a href="/mrbig/login" data-link-alt="Login"><span>Login</span></a></li>';
                 }
@@ -51,7 +51,7 @@
                 <a href='/mrbig/kontakt'><li>Kontakt</li></a>
                 <?php 
                     if(isset($_SESSION['email'])){
-                        echo '<a href="/mrbig/admin.php?page=clanovi"><li>Clanovi</li></a>';
+                        echo '<a href="/mrbig/admin/clanovi"><li>Clanovi</li></a>';
                     } else {
                         echo '<a href="/mrbig/login"><li>Login</li></a>';
                     }

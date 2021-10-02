@@ -2,4 +2,7 @@ RewriteEngine on
 
 RewriteRule ^(index|kontakt|login)$ $1.php [NC,L]
 
+RewriteRule ^admin/clanovi$ admin.php?page=clanovi [NC,L]
+RewriteRule ^admin/dodaj$ admin.php?page=dodaj [NC,L]
+
 ErrorDocument 404 /mrbig/404.php

@@ -116,7 +116,7 @@
         </div>
     </section>
 </main>
-<script src='./js/gallery.js'></script>
-<script src='./js/carousel.js'></script>
+<script src='/mrbig/js/gallery.js'></script>
+<script src='/mrbig/js/carousel.js'></script>
 
 <?php include './includes/footer.php'?>
