@@ -47,8 +47,8 @@
             </div>
             <div id="line" style='background: #444'></div>
             <ul class='mobile_navigation-links'>
-                <a href='/mrbig'><li>Pocetna</li></a>
-                <a href='/mrbig/kontakt'><li>Kontakt</li></a>
+                <a href='/'><li>Pocetna</li></a>
+                <a href='/kontakt'><li>Kontakt</li></a>
                 <?php 
                     if(isset($_SESSION['email'])){
                         echo '<a href="/admin/clanovi"><li>Clanovi</li></a>';
