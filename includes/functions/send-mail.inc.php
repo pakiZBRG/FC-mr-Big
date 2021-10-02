@@ -5,7 +5,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require realpath($_SERVER["DOCUMENT_ROOT"])."/mrbig/vendor/autoload.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"])."/vendor/autoload.php";
     $status = false;
 
     if(isset($_GET["send"])) {

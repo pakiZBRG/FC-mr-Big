@@ -26,7 +26,7 @@
                         session_start();
                         $_SESSION["id"] = $row["id"];
                         $_SESSION["email"] = $row["email"];
-                        header("Location: /mrbig/admin.php?page=clanovi");
+                        header("Location: /admin/clanovi");
                         exit();
                     }
                 }

@@ -16,7 +16,7 @@
     </section>
 </main>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2bbVHiy49yERPNxWkbZjF1MjLLheKL64&callback=initMap"></script>
-<script src='/mrbig/js/map.js'></script>
+<script src='./js/map.js'></script>
 
 
 <?php include './includes/footer.php'?>
