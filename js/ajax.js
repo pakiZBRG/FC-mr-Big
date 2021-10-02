@@ -8,7 +8,7 @@ function openUpdateModal(e) {
 
     // Open modal AJAX
     $.ajax({
-        url: '/mrbig/includes/modal.php',
+        url: '/includes/modal.php',
         method: "GET",
         data: {
             memberId
@@ -43,7 +43,7 @@ function displayResults(pageNum) {
     var input = $('#search').val();
 
     $.ajax({
-        url: '/mrbig/includes/functions/members.inc.php',
+        url: '/includes/functions/members.inc.php',
         method: "GET",
         data: {
             pageNum,
@@ -64,7 +64,7 @@ function deleteMember(id) {
     var pageNum = $('.current').text();
 
     $.ajax({
-        url: '/mrbig/includes/functions/members.inc.php',
+        url: '/includes/functions/members.inc.php',
         method: "GET",
         data: {
             delete: id,
@@ -86,7 +86,7 @@ function extendMembership(id) {
     var pageNum = $('.current').text();
 
     $.ajax({
-        url: '/mrbig/includes/functions/members.inc.php',
+        url: '/includes/functions/members.inc.php',
         method: "GET",
         data: {
             extend: id,
@@ -122,7 +122,7 @@ function updateMember() {
         $('.center').html('<p class="error">Izaberite datum pre <b>'+fromFormat.substring(4, 16)+'</b>.</p>')
     } else {
         $.ajax({
-            url: '/mrbig/includes/functions/members.inc.php',
+            url: '/includes/functions/members.inc.php',
             method: "GET",
             data: {
                 update: id,
@@ -154,7 +154,7 @@ function sendContact() {
     $('#send').disabled = false;
 
     $.ajax({
-        url: '/mrbig/includes/functions/contact-form.inc.php',
+        url: '/includes/functions/contact-form.inc.php',
         method: "GET",
         data: {
             email,
@@ -180,7 +180,7 @@ function addMember() {
     var create = 'create';
 
     $.ajax({
-        url: '/mrbig/includes/functions/add-member.inc.php',
+        url: '/includes/functions/add-member.inc.php',
         method: "GET",
         data: {
             name,
