@@ -18,6 +18,17 @@ button:focus {
     outline: none;
 }
 
+::-webkit-scrollbar {
+    width: .5em;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.9);
+}
+   
+::-webkit-scrollbar-thumb {
+    background: whitesmoke;
+}
+
 @mixin formControl {
     & .form_control {
         display: flex;

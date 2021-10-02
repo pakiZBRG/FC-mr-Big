@@ -29,7 +29,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
         <title>Fc Mr Big<?php echo $name; ?></title>
-        <link rel="stylesheet" href="/style/style.css">
+        <link rel="stylesheet" href="./style/style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
         <script src="https://kit.fontawesome.com/877dc3bb9e.js" crossorigin="anonymous"></script>
