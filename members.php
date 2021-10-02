@@ -5,5 +5,5 @@
         <i class='fa fa-search'></i>
         <input type='text' id='search' name='search' onkeyup='displayResults()' placeholder='ID, ime, prezime'/>
     </aside>
-    <?php include './includes/functions/members.inc.php' ?>
+    <?php include '/includes/functions/members.inc.php' ?>
 </section>

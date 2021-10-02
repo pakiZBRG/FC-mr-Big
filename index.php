@@ -1,6 +1,6 @@
-<?php include './includes/header.php'?>
-<?php include './includes/nav.php'?>
-<?php include './includes/carousel.php'?>
+<?php include '/includes/header.php'?>
+<?php include '/includes/nav.php'?>
+<?php include '/includes/carousel.php'?>
 
 <main>
     <section class='container'>
@@ -116,7 +116,7 @@
         </div>
     </section>
 </main>
-<script src='./js/gallery.js'></script>
-<script src='./js/carousel.js'></script>
+<script src='/js/gallery.js'></script>
+<script src='/js/carousel.js'></script>
 
-<?php include './includes/footer.php'?>
+<?php include '/includes/footer.php'?>

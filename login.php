@@ -1,8 +1,8 @@
-<?php include './includes/header.php'?>
-<?php include './includes/nav.php'?>
+<?php include '/includes/header.php'?>
+<?php include '/includes/nav.php'?>
 <?php
     if(isset($_SESSION["email"])) {
-        header("Location: /mrbig");
+        header("Location: /");
     }
 ?>
 
@@ -13,7 +13,7 @@
     </figure>
 
     <div class="center">
-        <?php include './includes/functions/login.inc.php' ?>
+        <?php include '/includes/functions/login.inc.php' ?>
     </div>
 
     <form method="POST" class="login-form">
@@ -38,4 +38,4 @@
     </form>
 </main>
 
-<?php include './includes/footer.php'?>
+<?php include '/includes/footer.php'?>

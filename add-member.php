@@ -3,7 +3,7 @@
         <div class='admin-add'>
             <h1>Dodaj Novog Clana</h1>
             <div class="center" style='margin-bottom: 1rem'>
-                <?php include './includes/functions/add-member.inc.php' ?>
+                <?php include '/includes/functions/add-member.inc.php' ?>
             </div>
             <form method="POST" class='admin-add__form'>
                 <div class='form_control'>
