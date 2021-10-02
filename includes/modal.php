@@ -1,6 +1,6 @@
 <?php
 
-    include './functions/db.inc.php';
+    include 'functions/db.inc.php';
 
     if(isset($_GET["memberId"])){
         $id = $_GET["memberId"];

@@ -4,6 +4,6 @@
     session_destroy();
     session_unset();
 
-    header("Location: /mrbig");
+    header("Location: /");
 
 ?>

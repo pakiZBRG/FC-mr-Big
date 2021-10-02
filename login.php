@@ -2,7 +2,7 @@
 <?php include './includes/nav.php'?>
 <?php
     if(isset($_SESSION["email"])) {
-        header("Location: /mrbig");
+        header("Location: /");
     }
 ?>
 
@@ -12,30 +12,9 @@
         <h1>Login</h1>
     </figure>
 
-    <div class="center">
-        <?php include './includes/functions/login.inc.php' ?>
-    </div>
-
-    <form method="POST" class="login-form">
-        <div class='form_control'>
-            <label>Email</label>
-            <input
-                type='email'
-                name='email'
-                value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>"
-            />
-        </div>
-        <div class='form_control'>
-            <label>Lozinka</label>
-            <input
-                type='password'
-                name='password' 
-                value="<?php if(isset($_POST['password'])) echo $_POST['password']; ?>"
-            />
-        </div>
-        
-        <input type='submit' name='login' value='Uloguj se' class='btn'/>
-    </form>
+    <article id="login">
+        <?php include './includes/login-form.php' ?>
+    </article>
 </main>
 
 <?php include './includes/footer.php'?>

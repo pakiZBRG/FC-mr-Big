@@ -1,5 +1,5 @@
 <div class="center">
-    <?php include 'send-mail.inc.php' ?>
+    <?php include 'functions/send-mail.inc.php' ?>
 </div>
 <form method="POST">
     <div class='form_control'>

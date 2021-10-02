@@ -20,13 +20,13 @@
             <h2>Mr Big</h2>
         </div>
         <ul class='navigation_links'>
-            <li><a href="/mrbig" data-link-alt="Pocetna"><span>Pocetna</span></a></li>
-            <li><a href="/mrbig/kontakt" data-link-alt="Kontakt"><span>Kontakt</span></a></li>
+            <li><a href="/" data-link-alt="Pocetna"><span>Pocetna</span></a></li>
+            <li><a href="/kontakt" data-link-alt="Kontakt"><span>Kontakt</span></a></li>
             <?php 
                 if(isset($_SESSION['email'])){
-                    echo '<li><a href="/mrbig/admin/clanovi" data-link-alt="Clanovi"><span>Clanovi</span></a></li>';
+                    echo '<li><a href="/admin/clanovi" data-link-alt="Clanovi"><span>Clanovi</span></a></li>';
                 } else {
-                    echo '<li><a href="/mrbig/login" data-link-alt="Login"><span>Login</span></a></li>';
+                    echo '<li><a href="/login" data-link-alt="Login"><span>Login</span></a></li>';
                 }
             ?>
         </ul>
@@ -51,9 +51,9 @@
                 <a href='/mrbig/kontakt'><li>Kontakt</li></a>
                 <?php 
                     if(isset($_SESSION['email'])){
-                        echo '<a href="/mrbig/admin/clanovi"><li>Clanovi</li></a>';
+                        echo '<a href="/admin/clanovi"><li>Clanovi</li></a>';
                     } else {
-                        echo '<a href="/mrbig/login"><li>Login</li></a>';
+                        echo '<a href="/login"><li>Login</li></a>';
                     }
                 ?>
             </ul>
