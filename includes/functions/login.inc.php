@@ -2,9 +2,9 @@
 
     include "db.inc.php";
 
-    if(isset($_POST["login"])) {
-        $email = mysqli_real_escape_string($conn, $_POST["email"]);
-        $password = mysqli_real_escape_string($conn, $_POST["password"]);
+    if(isset($_GET["login"])) {
+        $email = mysqli_real_escape_string($conn, $_GET["email"]);
+        $password = mysqli_real_escape_string($conn, $_GET["password"]);
 
         if(empty($email) || empty($password)) {
             echo "<p class='error'>Popunite polja.</p>";

@@ -21,7 +21,7 @@
             <label>Email</label>
             <input
                 type='email'
-                name='email'
+                id='email'
                 value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>"
             />
         </div>
@@ -29,12 +29,12 @@
             <label>Lozinka</label>
             <input
                 type='password'
-                name='password' 
+                id='password' 
                 value="<?php if(isset($_POST['password'])) echo $_POST['password']; ?>"
             />
         </div>
         
-        <input type='submit' name='login' value='Uloguj se' class='btn'/>
+        <button name='login' class='btn' onclick='login(); return false;'>Uloguj se</button>
     </form>
 </main>
 

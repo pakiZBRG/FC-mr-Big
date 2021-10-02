@@ -197,3 +197,25 @@ function addMember() {
         }
     })
 }
+
+function login() {
+    var email = $('#email').val();
+    var password = $('#password').val();
+    var login = 'login';
+
+    $.ajax({
+        url: '/includes/functions/login.inc.php',
+        method: "GET",
+        data: {
+            email,
+            password,
+            login
+        },
+        success: data => {
+            // window.location.replace("https://fcmrbig.herokuapp.com/admin/clanovi");
+        }, 
+        error: (xhr, status, error) => {
+            console.log(error)
+        }
+    })
+}
