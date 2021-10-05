@@ -1,7 +1,7 @@
 <?php include './includes/header.php' ?>
 <?php include './includes/nav.php' ?>
 <?php
-    require realpath($_SERVER["DOCUMENT_ROOT"])."\\vendor\autoload.php";
+    include realpath($_SERVER["DOCUMENT_ROOT"])."\\mrbig\\vendor\autoload.php";
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__)->load();
     $google = $_ENV["GOOGLE_API_KEY"];
 ?>
