@@ -30,8 +30,8 @@
                 $mail->Port       = 587;
         
                 //Recipients
-                $mail->setFrom('nasa.nase72@gmail.com', 'Fc Mr Big');
-                $mail->addAddress($email);
+                $mail->setFrom($email, 'Fc Mr Big');
+                $mail->addAddress('nasa.nase72@gmail.com');
                 $mail->addReplyTo('no-reply@gmail.com', 'No reply');
         
                 $mail->isHTML(true);
