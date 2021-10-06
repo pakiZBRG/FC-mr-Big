@@ -19,17 +19,18 @@
 
             $mail = new PHPMailer(true);
             try {
+                //Server settings
                 $mail->isSMTP();
-                // $mail->SMTPDebug = 4;
-                $mail->Host = 'smtp.gmail.com';
-                $mail->Port = 587;
-                $mail->SMTPAuth = true;
+                $mail->Host       = 'smtp.gmail.com';
+                $mail->SMTPAuth   = true;
+                $mail->Username   = 'nasa.nase72@gmail.com';
+                $mail->Password   = '-Nikola09';
                 $mail->SMTPSecure = 'tls';
-                $mail->Username = 'nasa.nase72@gmail.com';
-                $mail->Password = '-Nikola09';
+                $mail->Port       = 587;
         
-                $mail->setFrom($email, "");
-                $mail->addAddress('nasa.nase72@gmail.com');
+                //Recipients
+                $mail->setFrom('pavlovicnikola511@gmail.com', 'Pegas Network');
+                $mail->addAddress($email);
                 $mail->addReplyTo('no-reply@gmail.com', 'No reply');
         
                 $mail->isHTML(true);
