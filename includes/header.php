@@ -29,7 +29,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="/assets/images/logo.png" type="image/x-icon">
         <title>Fc Mr Big<?php echo $name; ?></title>
-        <link rel="stylesheet" href="/mrbig/style/style.css">
+        <link rel="stylesheet" href="/style/style.css">
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
         <script src="https://kit.fontawesome.com/877dc3bb9e.js" crossorigin="anonymous"></script>
@@ -37,8 +37,8 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
-        <script src="/mrbig/js/ajax.js"></script>
-        <script src="/mrbig/js/mobileNav.js"></script>
+        <script src="/js/ajax.js"></script>
+        <script src="/js/mobileNav.js"></script>
         <script>
             // Prevent resending forms on page refresh
             if ( window.history.replaceState ) {
