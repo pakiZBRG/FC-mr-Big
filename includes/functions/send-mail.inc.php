@@ -5,7 +5,12 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require realpath($_SERVER["DOCUMENT_ROOT"])."/vendor/autoload.php";
+    include realpath($_SERVER["DOCUMENT_ROOT"])."/vendor/autoload.php";
+
+    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();
+    $user_email = $_ENV["USER_EMAIL"];
+    $user_pass = $_ENV["USER_PASS"];
+
     $status = false;
 
     if(isset($_GET["send"])) {
@@ -25,7 +30,7 @@
                 $mail->SMTPAuth = true;
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Username = 'nasa.nase72@gmail.com';
-                $mail->Password = 'Nikola-990';
+                $mail->Password = '-Nikola09';
         
                 $mail->setFrom($email, "");
                 $mail->addAddress('nasa.nase72@gmail.com');

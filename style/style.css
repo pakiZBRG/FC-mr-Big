@@ -1053,8 +1053,7 @@ section .icons-figure .card p {
 .admin-nav {
   width: 12rem;
   height: 100vh;
-  position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   display: -webkit-box;
@@ -1123,6 +1122,13 @@ section .icons-figure .card p {
 .admin-section {
   background: #222;
   width: 100%;
+  margin-left: 12rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .admin-section {
+    margin-left: 0;
+  }
 }
 
 .admin-add {
