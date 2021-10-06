@@ -20,7 +20,7 @@
             $mail = new PHPMailer(true);
             try {
                 //Server settings
-                $mail->SMTPDebug = 4;
+                // $mail->SMTPDebug = 4;
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
