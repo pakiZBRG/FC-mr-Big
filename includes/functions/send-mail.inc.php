@@ -5,7 +5,11 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require realpath($_SERVER["DOCUMENT_ROOT"])."/vendor/autoload.php";
+    include realpath($_SERVER["DOCUMENT_ROOT"])."/vendor/autoload.php";
+
+    $dotenv = Dotenv\Dotenv::createImmutable(realpath($_SERVER["DOCUMENT_ROOT"]))->load();
+    $user_email = $_ENV["USER_EMAIL"];
+    $user_pass = $_ENV["USER_PASS"];
 
     $status = false;
 
@@ -20,18 +24,18 @@
             $mail = new PHPMailer(true);
             try {
                 //Server settings
-                $mail->SMTPDebug = 4;
+                // $mail->SMTPDebug = 4;
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'nasa.nase72@gmail.com';
-                $mail->Password   = '-Nikola09';
+                $mail->Username   = $user_email;
+                $mail->Password   = $user_pass;
                 $mail->SMTPSecure = 'tls';
                 $mail->Port       = 587;
         
                 //Recipients
                 $mail->setFrom($email, "");
-                $mail->addAddress('nasa.nase72@gmail.com');
+                $mail->addAddress($user_email);
                 $mail->addReplyTo('no-reply@gmail.com', 'No reply');
         
                 $mail->isHTML(true);

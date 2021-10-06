@@ -1,5 +1,10 @@
 <?php include './includes/header.php' ?>
 <?php include './includes/nav.php' ?>
+<?php
+    include __DIR__ . '/vendor/autoload.php';
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__)->load();
+    $google = $_ENV["GOOGLE_API_KEY"];
+?>
 
 <main>
     <figure class='hero-img'>
@@ -17,7 +22,7 @@
         </article>
     </section>
 </main>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXCl8jF8jseshKFovB_ZMtFvvBFOWp0Ek&callback=initMap"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<?php echo $google ?>&callback=initMap"></script>
 <script src='./js/map.js'></script>
 
 
