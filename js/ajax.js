@@ -154,7 +154,7 @@ function sendContact() {
     $('#send').disabled = false;
 
     $.ajax({
-        url: '/includes/contact-form.php',
+        url: '/mrbig/includes/contact-form.php',
         method: "GET",
         data: {
             email,

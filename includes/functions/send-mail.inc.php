@@ -5,7 +5,7 @@
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
-    require realpath($_SERVER["DOCUMENT_ROOT"])."/vendor/autoload.php";
+    require realpath($_SERVER["DOCUMENT_ROOT"])."/mrbig/vendor/autoload.php";
 
     $status = false;
 
@@ -20,7 +20,7 @@
             $mail = new PHPMailer(true);
             try {
                 //Server settings
-                // $mail->SMTPDebug = 4;
+                $mail->SMTPDebug = 4;
                 $mail->isSMTP();
                 $mail->Host       = 'smtp.gmail.com';
                 $mail->SMTPAuth   = true;
@@ -30,13 +30,13 @@
                 $mail->Port       = 587;
         
                 //Recipients
-                $mail->setFrom('pavlovicnikola511@gmail.com', 'Fc Mr Big');
-                $mail->addAddress($email);
+                $mail->setFrom($email, "");
+                $mail->addAddress('nasa.nase72@gmail.com');
                 $mail->addReplyTo('no-reply@gmail.com', 'No reply');
         
                 $mail->isHTML(true);
                 $mail->CharSet = "UTF-8";
-                $mail->Subject = "FC Mr Big";
+                $mail->Subject = "FC Mr Big: $subject";
                 $mail->Body = "<p>$message</p>";
         
                 $mail->send();
