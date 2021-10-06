@@ -38,13 +38,14 @@
                 $mail->Body = "<p>$message</p>";
         
                 $mail->send();
+
+                $status = true;
+                echo "<p class='error'><i class='fa fa-check-circle'></i> Mejl uspesno poslat.</p>";
             }
             catch(Exception $e){
                 $result = $mail->ErrorInfo;
                 echo "<p class='error'>$result</p>";
             }
-            $status = true;
-            echo "<p class='error'><i class='fa fa-check-circle'></i> Mejl uspesno poslat.</p>";
         }
     }
 
